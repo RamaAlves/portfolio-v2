@@ -1,0 +1,16 @@
+@import '../../../../variables.scss';
+@import '../../../../mixins.scss';
+.darkMode {
+  color: $violet;
+  &:hover {
+    color: $light-violet;
+    filter: drop-shadow(0px 0px 10px $light-violet);
+  }
+}
+.lightMode {
+  color: $violet;
+  &:hover {
+    color: $light-violet;
+    filter: drop-shadow(0px 0px 10px $light-violet);
+  }
+}

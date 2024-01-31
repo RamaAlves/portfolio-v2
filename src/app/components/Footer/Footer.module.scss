@@ -1,0 +1,83 @@
+@import '../../variables.scss';
+@import '../../mixins.scss';
+.footer {
+  width: 100%;
+  height: $height-footer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+
+  transition: all 0.3s ease;
+  @include lg {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .contactMe {
+    text-align: center;
+    @include lg {
+      width: 50%;
+      text-align: end;
+      padding-right: 2rem;
+      font-size: $title;
+    }
+  }
+  .contacts {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    @include lg {
+      width: 50%;
+      justify-content: flex-start;
+      gap: 2rem;
+    }
+    a {
+      width: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @include anchor;
+    }
+  }
+  .copy {
+    width: 100%;
+  }
+}
+.darkMode {
+  background-color: $black;
+
+  .contactMe {
+    color: $white;
+    filter: drop-shadow(0px 0px 4px $light-blue);
+  }
+  .contacts {
+    a {
+      @include interact-dark-anchor;
+    }
+  }
+  .copy {
+    color: $white;
+    filter: drop-shadow(0px 0px 4px $light-blue);
+  }
+}
+.lightMode {
+  background-color: $dark-blue;
+
+  .contactMe {
+    color: $white;
+    filter: drop-shadow(0px 0px 4px $light-violet);
+  }
+  .contacts {
+    a {
+      @include interact-light-anchor;
+    }
+  }
+  .copy {
+    color: $white;
+    filter: drop-shadow(0px 0px 4px $light-violet);
+  }
+}

@@ -1,0 +1,127 @@
+@import '../../variables.scss';
+@import '../../mixins.scss';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: calc(100dvh - $height-footer - $height-nav);
+  overflow: auto;
+  margin-top: $height-nav;
+  @include scrollbar-style;
+  @include lg {
+    margin-top: 0;
+  }
+  .resume {
+    position: relative;
+    padding: 1.6rem 1rem;
+    display: flex;
+    width: 100%;
+    height: max-content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .content {
+      z-index: 10;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .containerResume {
+        transition: background-color 0.3s ease;
+        padding: 0.5rem 1rem;
+        align-self: flex-start;
+        @include lg {
+          padding: 0 2rem;
+        }
+        @include xl {
+          padding: 0 4vw;
+        }
+        .resumeParagraph {
+          font-size: $text-size;
+          text-align: left;
+          align-self: start;
+          @include lg {
+            font-size: $resume-size;
+          }
+          @include xl {
+          }
+        }
+      }
+      .containerButtons {
+        padding-top: 1rem;
+        transition: background-color 0.3s ease;
+      }
+    }
+  }
+
+  .proyects {
+    padding: 1.6rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    h2 {
+      @include title-h2;
+    }
+    .containerProyects {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      gap: 1rem;
+
+      @include lg {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+    }
+  }
+}
+.darkMode {
+  .resume {
+    .content {
+      .containerResume {
+        background-color: $bg-dark;
+        .resumeParagraph {
+          color: $white;
+          filter: drop-shadow(0px 0px 4px $white);
+        }
+      }
+      .containerButtons {
+        background-color: $bg-dark;
+      }
+    }
+  }
+  .proyects {
+    h2 {
+      color: $white;
+      filter: drop-shadow(0px 0px 4px $white);
+    }
+  }
+}
+.lightMode {
+  .resume {
+    .content {
+      .containerResume {
+        background-color: $bg-light;
+        .resumeParagraph {
+          color: $black;
+          filter: drop-shadow(0px 0px 4px $light-violet);
+        }
+      }
+      .containerButtons {
+        background-color: $bg-light;
+      }
+    }
+  }
+  .proyects {
+    h2 {
+      color: $black;
+      filter: drop-shadow(0px 0px 4px $light-violet);
+    }
+  }
+}

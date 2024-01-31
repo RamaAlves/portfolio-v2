@@ -1,0 +1,14 @@
+#root {
+  /* max-width: 1280px; */
+  width: 100%;
+  min-height: 100dvh;
+  text-align: center;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

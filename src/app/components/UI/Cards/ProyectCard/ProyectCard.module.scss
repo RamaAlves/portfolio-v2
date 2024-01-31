@@ -1,0 +1,86 @@
+@import '../../../../variables.scss';
+@import '../../../../mixins.scss';
+
+.cardProyect {
+  @include format-card;
+  cursor: pointer;
+
+  .image {
+    flex-basis: 200px;
+    width: 100%;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-radius: $border-radius;
+    padding: 0.5rem;
+    @include lg {
+      aspect-ratio: 16/9;
+      width: 360px;
+      height: 100%;
+    }
+  }
+  .containerResume {
+    height: 100%;
+    @include lg {
+      padding: 0.5rem;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: flex-start;
+    }
+    .title {
+      text-align: center;
+      width: 100%;
+      font-size: $sub-title;
+      @include lg {
+        margin-bottom: 0.5rem;
+        font-size: $sub-title-lg;
+      }
+    }
+    .resume {
+      display: none;
+      padding: 1rem;
+      padding-top: 0;
+      font-size: $description-proyect;
+      @include lg {
+        display: block;
+        overflow: auto;
+        @include scrollbar-style;
+      }
+    }
+  }
+}
+.darkMode {
+  @include card-dark;
+
+  .containerResume {
+    color: $black;
+
+    .title {
+      color: $black;
+      @include lg {
+        border-bottom: 1px solid $black;
+      }
+    }
+    .resume {
+      color: $black;
+    }
+  }
+}
+.lightMode {
+  @include card-light;
+
+  .containerResume {
+    color: $white;
+
+    .title {
+      color: $white;
+      @include lg {
+        border-bottom: 1px solid $white;
+      }
+    }
+    .resume {
+      color: $white;
+    }
+  }
+}

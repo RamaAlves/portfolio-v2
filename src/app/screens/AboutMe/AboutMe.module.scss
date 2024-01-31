@@ -1,0 +1,135 @@
+@import '../../variables.scss';
+@import '../../mixins.scss';
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: calc(100dvh - $height-footer - $height-nav);
+  overflow: auto;
+  margin-top: $height-nav;
+  @include scrollbar-style;
+  @include lg {
+    margin-top: 0;
+  }
+  h2 {
+    @include title-h2;
+  }
+  .containerDescription {
+    font-size: $text-size;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .containerPrhases {
+    overflow: hidden;
+    height: 40px;
+    flex-shrink: 0;
+    .prhases {
+      display: flex;
+      width: max-content;
+      height: auto;
+      gap: 2rem;
+      animation: scrollH 80s linear infinite alternate;
+    }
+  }
+  .containerHobbies {
+    font-size: $text-size;
+    padding: 1.8rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    @include lg {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-around;
+    }
+  }
+}
+.darkMode {
+  h2 {
+    color: $white;
+    filter: drop-shadow(0px 0px 4px $white);
+  }
+  .containerDescription {
+    color: $white;
+    filter: drop-shadow(0px 0px 4px $white);
+  }
+  .containerPrhases {
+    background-color: $black-transparent;
+    border-top: 0.4rem solid;
+    border-bottom: 0.4rem solid;
+    border-color: $white;
+    animation: changeBorderDark 1.2s ease infinite alternate;
+    filter: drop-shadow(0px 0px 4px $light-blue);
+    .prhases {
+      color: $white;
+      filter: drop-shadow(0px 0px 1px $white);
+    }
+  }
+  .containerHobbies {
+    color: $white;
+  }
+}
+
+.lightMode {
+  h2 {
+    color: $black;
+    filter: drop-shadow(0px 0px 4px $light-violet);
+  }
+  .containerDescription {
+    filter: drop-shadow(0px 0px 4px $light-violet);
+    color: $black;
+  }
+  .containerPrhases {
+    background-color: $white-transparent;
+    border-top: 0.4rem solid;
+    border-bottom: 0.4rem solid;
+    border-color: $light-violet;
+    animation: changeBorderLight 1.2s ease infinite alternate;
+    filter: drop-shadow(0px 0px 4px $violet);
+    .prhases {
+      color: $black;
+      filter: drop-shadow(0px 0px 1px $white);
+    }
+  }
+  .containerHobbies {
+    color: $black;
+  }
+}
+
+@keyframes scrollH {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-5100px);
+  }
+}
+@keyframes changeBorderDark {
+  0% {
+    border-color: $white;
+  }
+  50% {
+    border-color: $light-grey;
+  }
+  100% {
+    border-color: $white;
+  }
+}
+@keyframes changeBorderLight {
+  0% {
+    border-color: $light-violet;
+  }
+  50% {
+    border-color: $violet;
+  }
+  100% {
+    border-color: $light-violet;
+  }
+}

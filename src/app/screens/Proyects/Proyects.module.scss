@@ -1,0 +1,46 @@
+@import '../../variables.scss';
+@import '../../mixins.scss';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: calc(100dvh - $height-footer - $height-nav);
+  overflow: auto;
+  position: relative;
+  margin-top: $height-nav;
+  @include scrollbar-style;
+  @include lg {
+    margin-top: 0;
+  }
+  h2 {
+    @include title-h2;
+  }
+  .proyects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    padding: 1rem 0;
+    z-index: 10;
+    @include lg {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+}
+.darkMode {
+  h2 {
+    color: $white;
+    filter: drop-shadow(0px 0px 4px $white);
+  }
+}
+.lightMode {
+  h2 {
+    color: $black;
+    filter: drop-shadow(0px 0px 4px $light-violet);
+  }
+}
