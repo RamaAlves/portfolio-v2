@@ -39,6 +39,12 @@
     font-size: $title-lg;
   }
 }
+@mixin sub-title {
+  font-size: $sub-title;
+  @include lg {
+    font-size: $sub-title-lg;
+  }
+}
 
 @mixin anchor {
   list-style: none;
@@ -48,23 +54,29 @@
     filter 0.3s ease;
 }
 
-@mixin interact-dark-anchor {
-  color: $violet;
-  filter: drop-shadow(0px 0px 6px $light-violet);
-  &:hover,
-  &:focus {
-    filter: drop-shadow(0px 0px 10px $white);
-    color: $white;
-  }
-}
-
-@mixin interact-light-anchor {
+/* @mixin interact-dark-anchor {
   color: $white;
-  filter: drop-shadow(0px 0px 4px $light-violet);
+  filter: drop-shadow(0px 0px 4px $light-grey);
+  transition:
+    color 0.3s ease,
+    filter 0.3s ease;
   &:hover,
   &:focus {
     color: $light-violet;
-    filter: drop-shadow(0px 0px 10px $light-grey);
+    filter: drop-shadow(0px 0px 4px $white);
+  }
+} */
+
+@mixin interact-anchor {
+  color: $white;
+  filter: drop-shadow(0px 0px 4px $light-grey);
+  transition:
+    color 0.3s ease,
+    filter 0.3s ease;
+  &:hover,
+  &:focus {
+    color: $light-violet;
+    filter: drop-shadow(0px 0px 4px $white);
   }
 }
 
@@ -90,6 +102,7 @@
   align-items: center;
   padding: 0.5rem;
   text-decoration: none;
+  transition: background-color 0.3s ease;
   @include lg {
     height: 250px;
     width: 800px;
@@ -101,16 +114,34 @@
 
 @mixin card-light {
   color: $white;
-  background: $blue-transparent;
-  border: 1px solid $blue-transparent-border;
+  background: $dark-violet-transparent;
+  border: 1px solid $dark-violet-transparent-border;
+  &:focus,
+  &:hover {
+    color: $white;
+    background: $dark-violet-transparent-hover;
+  }
+  a {
+    color: $white;
+  }
   .image {
     filter: drop-shadow(0px 0px 2px $violet);
   }
 }
 @mixin card-dark {
-  color: $black;
-  background: $white-transparent;
-  border: 1px solid $white-transparent-border;
+  background: $violet-transparent;
+  border: 1px solid $violet-transparent-border;
+  text-decoration: none;
+  color: $white;
+  &:focus,
+  &:hover {
+    color: $white;
+    background: $dark-violet-transparent;
+  }
+  a {
+    color: $white;
+    filter: drop-shadow(0px 0px 2px $white);
+  }
   .image {
     filter: drop-shadow(0px 0px 2px $white);
   }

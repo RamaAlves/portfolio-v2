@@ -1,7 +1,7 @@
 @import '../../../../variables.scss';
 @import '../../../../mixins.scss';
 
-.cardProyect {
+.cardProject {
   @include format-card;
   cursor: pointer;
 
@@ -41,7 +41,7 @@
       display: none;
       padding: 1rem;
       padding-top: 0;
-      font-size: $description-proyect;
+      font-size: $description-project;
       @include lg {
         display: block;
         overflow: auto;
@@ -52,18 +52,17 @@
 }
 .darkMode {
   @include card-dark;
-
+  transition: background 0.3s ease;
+  &:hover {
+    background: $violet-transparent-border;
+  }
   .containerResume {
-    color: $black;
-
     .title {
-      color: $black;
       @include lg {
-        border-bottom: 1px solid $black;
+        border-bottom: 1px solid $white;
       }
     }
     .resume {
-      color: $black;
     }
   }
 }
@@ -71,16 +70,12 @@
   @include card-light;
 
   .containerResume {
-    color: $white;
-
     .title {
-      color: $white;
       @include lg {
-        border-bottom: 1px solid $white;
+        border-bottom: 1px solid;
       }
     }
     .resume {
-      color: $white;
     }
   }
 }

@@ -1,0 +1,99 @@
+@import '../../../variables.scss';
+@import '../../../mixins.scss';
+.carrouselHobbies {
+  position: relative;
+  scroll-behavior: smooth;
+  font-size: $text-size;
+  padding: 1.8rem 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  @include lg {
+    width: 50%;
+    /*         
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-around;
+     */
+  }
+  .arrow {
+    position: absolute;
+    height: 30px;
+    z-index: 10;
+    cursor: pointer;
+    transition:
+      color 0.2s ease,
+      filter 0.2s ease;
+  }
+  .arrowRight {
+    right: 0rem;
+    @include lg {
+      right: 1rem;
+    }
+  }
+  .arrowLeft {
+    left: 0rem;
+    @include lg {
+      left: 1rem;
+    }
+  }
+  .indicators {
+    position: absolute;
+    bottom: 0.8rem;
+    display: flex;
+    gap: 1rem;
+    z-index: 10;
+    .indicator {
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      border: none;
+      outline: none;
+      transition:
+        background-color 0.2s ease,
+        filter 0.2s ease;
+    }
+  }
+}
+.darkMode {
+  .arrow {
+    color: $light-violet;
+    filter: drop-shadow(0px 0px 4px $violet);
+    &:hover {
+      color: $violet;
+      filter: drop-shadow(0px 0px 4px $dark-violet);
+    }
+  }
+  .indicators {
+    .indicator {
+      background-color: $white;
+      filter: drop-shadow(0px 0px 4px $light-violet);
+    }
+    .indicatorInactive {
+      background-color: $violet;
+      &:hover {
+        background-color: $dark-violet;
+        filter: drop-shadow(0px 0px 4px $violet);
+      }
+    }
+  }
+}
+.lightMode {
+  .arrow {
+    filter: drop-shadow(0px 0px 4px $violet);
+  }
+  .indicators {
+    .indicator {
+      background-color: $white;
+      filter: drop-shadow(0px 0px 4px $light-violet);
+    }
+    .indicatorInactive {
+      background-color: $violet;
+    }
+  }
+}

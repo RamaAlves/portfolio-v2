@@ -22,7 +22,10 @@ export function ButtonCv() {
       onMouseEnter={handleActivateAnimation}
       onMouseLeave={handleDeactivateAnimation}
       onFocus={handleActivateAnimation}
-      className={darkMode ? styles.darkMode : styles.lightMode}
+      className={[
+        styles.cv,
+        darkMode ? styles.darkMode : styles.lightMode,
+      ].join(' ')}
     >
       {active ? (
         <FontAwesomeIcon icon={faFile} bounce />

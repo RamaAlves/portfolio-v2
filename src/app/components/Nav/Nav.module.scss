@@ -6,7 +6,7 @@
   align-items: center;
   width: 100%;
   height: $height-nav;
-
+  position: static;
   font-size: $text-nav;
   z-index: 100;
 
@@ -36,6 +36,164 @@
     a {
       li {
         @include anchor-nav-desktop;
+      }
+    }
+  }
+}
+
+.navbarOverlay {
+  z-index: 1000;
+  left: 0;
+  top: 30px;
+  .logo {
+    width: 50px;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    transition:
+      left 2s ease,
+      filter 0.3s ease;
+    transform: translateY(-50%);
+  }
+  .hideButton {
+    top: 47px;
+    left: -275px;
+  }
+  .showButton {
+    top: 47px;
+    left: 15px;
+  }
+  .cardOptions {
+    border-top-right-radius: calc($border-radius * 2);
+    border-bottom-right-radius: calc($border-radius * 2);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    border-left: none;
+    transition:
+      left 1.4s ease-in-out,
+      background-color 0.3s ease;
+    .containerOptions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      padding: 0.4rem;
+      .routes {
+        padding: 0.4rem;
+        width: 100%;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: $text-nav;
+      }
+    }
+    .contianerButton {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem;
+      .button {
+        cursor: pointer;
+        transition:
+          color 0.3s ease,
+          filter 0.3s ease;
+      }
+    }
+  }
+  .expandedOptions {
+    top: 0;
+    left: 0;
+  }
+  .contractedOptions {
+    top: 0;
+    left: -260px;
+  }
+}
+.overlayOn {
+  display: none;
+
+  @include lg {
+    position: fixed;
+    display: flex;
+    opacity: 1;
+  }
+}
+.overlayOff {
+  display: none;
+  opacity: 0;
+}
+.darkModeOverlay {
+  .logo {
+    filter: drop-shadow(0px 0px 4px $white);
+    &:hover {
+      filter: drop-shadow(0px 0px 6px $violet);
+    }
+  }
+  .cardOptions {
+    border: 1px solid $white;
+    @include card-dark;
+    .containerOptions {
+      .routes {
+        a {
+          li {
+            @include interact-anchor;
+            &:hover {
+              color: $light-grey;
+              filter: none;
+            }
+          }
+        }
+      }
+    }
+    .contianerButton {
+      .button {
+        color: $white;
+        filter: drop-shadow(0px 0px 4px $white);
+        &:hover {
+          color: $light-violet;
+          filter: drop-shadow(0px 0px 4px $violet);
+        }
+      }
+    }
+  }
+}
+.lightModeOverlay {
+  .logo {
+    filter: drop-shadow(0px 0px 4px $light-violet);
+    &:hover {
+      filter: drop-shadow(0px 0px 6px $dark-violet);
+    }
+  }
+  .cardOptions {
+    border: 1px solid $white;
+    @include card-light;
+    .containerOptions {
+      .routes {
+        a {
+          li {
+            @include interact-anchor;
+            &:hover {
+              color: $light-grey;
+              filter: none;
+            }
+          }
+        }
+      }
+    }
+    .contianerButton {
+      .button {
+        color: $white;
+        filter: drop-shadow(0px 0px 4px $white);
+        &:hover {
+          color: $light-grey;
+          filter: drop-shadow(0px 0px 4px $light-violet);
+        }
       }
     }
   }
@@ -127,22 +285,22 @@
   .routes {
     a {
       li {
-        @include interact-dark-anchor;
+        @include interact-anchor;
       }
     }
   }
 }
 .lightMode {
-  background-color: $dark-blue;
-  border-bottom: 1px solid $blue;
-  filter: drop-shadow(0px 0px 10px $light-blue);
+  background-color: $black;
+  border-bottom: 1px solid $violet;
+  filter: drop-shadow(0px 0px 10px $light-violet);
   .info {
     &:hover,
     &:focus {
-      filter: drop-shadow(0px 0px 4px $light-blue);
+      filter: drop-shadow(0px 0px 4px $light-violet);
     }
     .logo {
-      filter: drop-shadow(0px 0px 4px $light-blue);
+      filter: drop-shadow(0px 0px 4px $light-violet);
     }
     .name {
       color: $white;
@@ -154,7 +312,7 @@
   .routes {
     a {
       li {
-        @include interact-light-anchor;
+        @include interact-anchor;
       }
     }
   }

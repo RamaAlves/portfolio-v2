@@ -4,8 +4,7 @@ import './App.css';
 import { Home } from './screens/Home/Home';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { LangProvider } from './contexts/LangContext';
-import { Proyects } from './screens/Proyects/Proyects';
-import { AboutMe } from './screens/AboutMe/AboutMe';
+import { Projects } from './screens/Projects/Projects';
 
 function App() {
   return (
@@ -15,8 +14,7 @@ function App() {
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
-              <Route path="/proyects" element={<Proyects />} />
-              <Route path="/about-me" element={<AboutMe />} />
+              <Route path="/projects" element={<Projects />} />
             </Route>
           </Routes>
         </LangProvider>

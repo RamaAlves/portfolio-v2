@@ -1,21 +1,21 @@
 import { ENGLISH } from '../../../../constants/Languages';
 import { useLang } from '../../../../hooks/useLang';
 import { useTheme } from '../../../../hooks/useTheme';
-import { ProyectSchema } from '../../../../interfaces/interfaces';
-import styles from './ProyectCard.module.scss';
-type Proyect = {
-  proyect: ProyectSchema;
+import { ProjectSchema } from '../../../../interfaces/interfaces';
+import styles from './ProjectCard.module.scss';
+type Project = {
+  project: ProjectSchema;
 };
 
-export function ProyectCard({ proyect }: Proyect) {
+export function ProjectCard({ project }: Project) {
   const { lang } = useLang();
   const { darkMode } = useTheme();
 
   return (
     <a
-      href={proyect.link}
+      href={project.link}
       className={[
-        styles.cardProyect,
+        styles.cardProject,
         darkMode ? styles.darkMode : styles.lightMode,
       ].join(' ')}
       target="_Blank"
@@ -24,24 +24,24 @@ export function ProyectCard({ proyect }: Proyect) {
         <>
           <img
             className={styles.image}
-            src={proyect.image}
-            alt={'image of ' + proyect.nameEN}
+            src={project.image}
+            alt={'image of ' + project.nameEN}
           />
           <div className={styles.containerResume}>
-            <h3 className={styles.title}>{proyect.nameEN}</h3>
-            <p className={styles.resume}>{proyect.resumeEN}</p>
+            <h3 className={styles.title}>{project.nameEN}</h3>
+            <p className={styles.resume}>{project.resumeEN}</p>
           </div>
         </>
       ) : (
         <>
           <img
             className={styles.image}
-            src={proyect.image}
-            alt={'imagen de ' + proyect.nameES}
+            src={project.image}
+            alt={'imagen de ' + project.nameES}
           />
           <div className={styles.containerResume}>
-            <h3 className={styles.title}>{proyect.nameES}</h3>
-            <p className={styles.resume}>{proyect.resumeES}</p>
+            <h3 className={styles.title}>{project.nameES}</h3>
+            <p className={styles.resume}>{project.resumeES}</p>
           </div>
         </>
       )}

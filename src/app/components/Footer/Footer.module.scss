@@ -1,5 +1,29 @@
 @import '../../variables.scss';
 @import '../../mixins.scss';
+.scrollDown {
+  position: fixed;
+  bottom: 60px;
+  left: 0;
+  z-index: 1000;
+  animation: bounce 2.6s linear infinite;
+  font-size: 1rem;
+  @include lg {
+    left: 20px;
+    font-size: 2rem;
+  }
+}
+.showScrollDown {
+  display: block;
+}
+.hiddenScrollDown {
+  display: none;
+}
+.darkAnimation {
+  color: $white;
+}
+.lightAnimation {
+  color: $light-violet;
+}
 .footer {
   width: 100%;
   height: $height-footer;
@@ -49,23 +73,22 @@
 }
 .darkMode {
   background-color: $black;
-
   .contactMe {
     color: $white;
-    filter: drop-shadow(0px 0px 4px $light-blue);
+    filter: drop-shadow(0px 0px 4px $light-violet);
   }
   .contacts {
     a {
-      @include interact-dark-anchor;
+      @include interact-anchor;
     }
   }
   .copy {
     color: $white;
-    filter: drop-shadow(0px 0px 4px $light-blue);
+    filter: drop-shadow(0px 0px 4px $light-violet);
   }
 }
 .lightMode {
-  background-color: $dark-blue;
+  background-color: $black;
 
   .contactMe {
     color: $white;
@@ -73,11 +96,35 @@
   }
   .contacts {
     a {
-      @include interact-light-anchor;
+      @include interact-anchor;
     }
   }
   .copy {
     color: $white;
     filter: drop-shadow(0px 0px 4px $light-violet);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+    bottom: 35px;
+  }
+  45% {
+    bottom: 55px;
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+    bottom: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }

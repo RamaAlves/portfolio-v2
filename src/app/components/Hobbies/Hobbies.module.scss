@@ -1,0 +1,11 @@
+@import '../../variables.scss';
+@import '../../mixins.scss';
+.containerSectionHobbies {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h3 {
+    @include sub-title;
+  }
+}

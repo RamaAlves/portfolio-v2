@@ -1,7 +1,6 @@
 @import '../../../variables.scss';
 @import '../../../mixins.scss';
 .background {
-  width: 500px;
   overflow: hidden;
   z-index: 10;
   position: absolute;
@@ -12,14 +11,20 @@
   display: none;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
+  bottom: 0;
   @include lg {
+    width: 500px;
     display: flex;
-    right: 1.2rem;
-    height: 380px;
+    height: 48dvh;
+    right: 1rem;
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
   }
   @include xl {
-    height: 300px;
-    right: 4vw;
+    width: 720px;
+    height: 70dvh;
+    height: 600px;
+    right: 2vw;
+    clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 33% 100%, 33% 46%);
   }
   img {
     padding: 10px;

@@ -5,13 +5,23 @@ import { ENGLISH } from '../../constants/Languages';
 import styles from './Nav.module.scss';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import {
+  faAnglesLeft,
+  faBars,
+  faXmark,
+} from '@fortawesome/free-solid-svg-icons';
 import { ContainerSwitches } from '../UI/Switches/ContainerSwitches/ContainerSwitches';
 import { useTheme } from '../../hooks/useTheme';
+import { useInView } from 'react-intersection-observer';
+
 export function Nav() {
   const { lang } = useLang();
   const { darkMode } = useTheme();
   const [showMenu, setShowMenu] = useState<boolean>(false);
+  const [overlayOpen, setOverlayOpen] = useState<boolean>(false);
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+  });
   function handleShow() {
     setShowMenu(!showMenu);
   }
@@ -23,6 +33,7 @@ export function Nav() {
           styles.nav,
           darkMode ? styles.darkMode : styles.lightMode,
         ].join(' ')}
+        ref={ref}
       >
         <Link to="/" className={styles.info}>
           <img
@@ -36,14 +47,61 @@ export function Nav() {
           <Link to="/">
             {lang == ENGLISH ? <li>Home</li> : <li>Inicio</li>}
           </Link>
-          <Link to="/proyects">
-            {lang == ENGLISH ? <li>Proyects</li> : <li>Proyectos</li>}
-          </Link>
-          <Link to="/about-me">
-            {lang == ENGLISH ? <li>About me</li> : <li>Sobre mi</li>}
+
+          <Link to="/projects">
+            {lang == ENGLISH ? <li>Projects</li> : <li>Proyectos</li>}
           </Link>
         </ul>
         <ContainerSwitches />
+      </nav>
+      <nav
+        className={[
+          styles.navbarOverlay,
+          darkMode ? styles.darkModeOverlay : styles.lightModeOverlay,
+          inView ? styles.overlayOff : styles.overlayOn,
+        ].join(' ')}
+      >
+        <img
+          className={[
+            styles.logo,
+            !overlayOpen ? styles.showButton : styles.hideButton,
+          ].join(' ')}
+          src="/images/assets/LogoRamaAlves.png"
+          alt="logo"
+          onClick={() => {
+            setOverlayOpen(!overlayOpen);
+          }}
+        />
+        <div
+          className={[
+            styles.cardOptions,
+            overlayOpen ? styles.expandedOptions : styles.contractedOptions,
+          ].join(' ')}
+        >
+          <div className={styles.containerOptions}>
+            <ul className={styles.routes}>
+              <Link to="/">
+                {lang == ENGLISH ? <li>Home</li> : <li>Inicio</li>}
+              </Link>
+
+              <Link to="/projects">
+                {lang == ENGLISH ? <li>Projects</li> : <li>Proyectos</li>}
+              </Link>
+            </ul>
+            {/* 
+            <ContainerSwitches /> */}
+          </div>
+          <div className={styles.contianerButton}>
+            <FontAwesomeIcon
+              className={styles.button}
+              icon={faAnglesLeft}
+              beatFade
+              onClick={() => {
+                setOverlayOpen(!overlayOpen);
+              }}
+            />
+          </div>
+        </div>
       </nav>
       <nav
         className={[
@@ -95,20 +153,12 @@ export function Nav() {
             {lang == ENGLISH ? <li>Home</li> : <li>Inicio</li>}
           </Link>
           <Link
-            to="/proyects"
+            to="/projects"
             onClick={() => {
               handleShow();
             }}
           >
-            {lang == ENGLISH ? <li>Proyects</li> : <li>Proyectos</li>}
-          </Link>
-          <Link
-            to="/about-me"
-            onClick={() => {
-              handleShow();
-            }}
-          >
-            {lang == ENGLISH ? <li>About me</li> : <li>Sobre mi</li>}
+            {lang == ENGLISH ? <li>Projects</li> : <li>Proyectos</li>}
           </Link>
         </ul>
       </div>

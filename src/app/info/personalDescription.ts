@@ -35,28 +35,28 @@ export const personalDescription = {
     {
       id: 'des-1',
       descriptionEN:
-      "My name's Ramiro Alves, I'm from Resistencia, Chaco. Currently I am dedicated to Frontend development.",
+        "My name's Ramiro Alves and I'm Frontend development.",
       descriptionES:
-        'Mi nombre es Ramiro Alves y soy de Resistencia, Chaco. Actualmente me dedico al desarrollo Frontend.',
+        'Mi nombre es Ramiro Alves y soy desarrollador Frontend.',
     },
     {
       id: 'des-2',
       descriptionEN:
-      'I finished the third stage of "Informatorio" (during/over) 2023 and participated in "launchX" at the end of 2022.(development bootcamps)',
+        'I finished the third stage of "Informatorio" (during/over) 2023 and participated in "launchX" at the end of 2022.(development bootcamps)',
       descriptionES:
-      'Finalicé la tercera etapa del informatorio durante 2023 y participé en launchX a finales de 2022.(bootcamps de programación)',
+        'Finalicé la tercera etapa del informatorio durante 2023 y participé en launchX a finales de 2022.(bootcamps de programación)',
     },
     {
       id: 'des-3',
       descriptionEN:
-      'I performed proyects mainly with React and also used other technologies such as JS, TS, Mysql, Sass, Python and Django.',
+        'I performed projects mainly with React and also used other technologies such as JS, TS, Mysql, Sass, Python and Django.',
       descriptionES:
         'Realice proyectos principalmente en React y también utilice otras tecnologías como JS, TS, Mysql, Sass, Python y Django.',
     },
     {
       id: 'des-4',
       descriptionEN:
-      'During 2023 I worked as a mentor in the stage 2 "Desarrollo web" of informatorio.',
+        'During 2023 I worked as a mentor in the stage 2 "Desarrollo web" of informatorio.',
       descriptionES:
         'Durante el 2023 trabajé como mentor en la etapa 2 "Desarrollo web" del informatorio.',
     },
@@ -70,64 +70,69 @@ export const personalDescription = {
     {
       id: 'des-6',
       descriptionEN:
-      'Regarding my professional experience, I worked as a music teacher in educational establishments, as a customer services agent in a call center, as a musician in the "Orquesta del Poder Legislativo del Chaco" and during 2023 I worked as a mentor in the stage 2 "Desarrollo web", of informatorio.',
+        'Regarding my professional experience, I worked as a music teacher in educational establishments, as a customer services agent in a call center, as a musician in the "Orquesta del Poder Legislativo del Chaco" and during 2023 I worked as a mentor in the stage 2 "Desarrollo web", of informatorio.',
       descriptionES:
         'En cuanto a mi experiencia profesional, trabajé como docente de música en establecimientos educativos, como representante de atención al cliente en un call center, como instrumentista en la "Orquesta del Poder Legislativo del Chaco" y durante el 2023 como mentor en la etapa 2 "Desarrollo web", del informatorio.',
     },
     {
       id: 'des-7',
       descriptionEN:
-      'Working alongside diverse groups of people I learned to adapt to different teams, their times and methodologies, promoting greater personal and group development that allowed us to achieve objectives that had a positive impact on a social level',
+        'Working alongside diverse groups of people I learned to adapt to different teams, their times and methodologies, promoting greater personal and group development that allowed us to achieve objectives that had a positive impact on a social level',
       descriptionES:
-      'Trabajando junto a diversos grupos de personas aprendí a adaptarme a diferentes equipos, sus tiempos y metodologías, promoviendo un mayor desarrollo personal y grupal que permitieron alcanzar objetivos que impactaron de manera positiva a nivel social.',
+        'Trabajando junto a diversos grupos de personas aprendí a adaptarme a diferentes equipos, sus tiempos y metodologías, promoviendo un mayor desarrollo personal y grupal que permitieron alcanzar objetivos que impactaron de manera positiva a nivel social.',
     },
     {
       id: 'des-8',
       descriptionEN:
-      'Currently I continue studying, learning English and I am looking for a job position as a developer.',
+        'Currently I continue studying, learning English and I am looking for a job position as a developer.',
       descriptionES:
-      'Actualmente sigo especializandome, aprendiendo inglés y me encuentro en búsqueda de un puesto laboral como desarrollador.',
+        'Actualmente sigo especializandome, aprendiendo inglés y me encuentro en búsqueda de un puesto laboral como desarrollador.',
     },
   ],
   hobbies: [
     {
       hobbieEN:
-      'With the gym, swim is my favorite activity. I really enjoy my training routines and I am currently attending the Regatas Club where I do both activities.',
+        'With the gym, swim is my favorite activity. I really enjoy my training routines and I am currently attending the Regatas Club where I do both activities.',
       hobbieES:
-      'Junto con el gimnasio, nadar es mi actividad física favorita. Disfruto mucho de mis rutinas de entrenamiento y actualmente estoy asistiendo al Club Regatas donde realizo ambas actividades.',
-      image: 'string',
+        'Junto con el gimnasio, nadar es mi actividad física favorita. Disfruto mucho de mis rutinas de entrenamiento y actualmente estoy asistiendo al Club Regatas donde realizo ambas actividades.',
+      image: ['/images/hobbies/pile.jpg',],
       id: 'hobbie-1',
     },
     {
       hobbieEN:
-      'I love coffee, I took courses to learn more and every day I prepare at least one coffee to accompany the work day.',
+        'I love coffee, I took courses to learn more and every day I prepare at least one coffee to accompany the work day.',
       hobbieES:
-      'Me encanta el café, hice cursos para aprender mas y todos los días me preparo al menos un café para acompañar la jornada de trabajo.',
-      image: 'string',
+        'Me encanta el café, hice cursos para aprender mas y todos los días me preparo al menos un café para acompañar la jornada de trabajo.',
+      image: [
+        '/images/hobbies/cafe.jpg',
+        '/images/hobbies/capu.jpg',
+        '/images/hobbies/capu2.jpg',
+        '/images/hobbies/chemex.jpg',
+      ],
       id: 'hobbie-2',
     },
     {
       hobbieEN:
-      'Sing and play guitar are part of my life. Although I trained as a music teacher, nowadays they are activities that I do as a hobby. The moments I spend doing this allow me to relax and reconnect with myself.',
+        'Sing and play guitar are part of my life. Although I trained as a music teacher, nowadays they are activities that I do as a hobby. The moments I spend doing this allow me to relax and reconnect with myself.',
       hobbieES:
-      'Cantar y tocar la guitarra son parte de mi vida. Si bien me forme como profesor de música, hoy en día son actividades que realizo como hobbie. Los momentos que paso haciendo esto me permiten relajarme y reconectar conmigo mismo.',
-      image: 'string',
+        'Cantar y tocar la guitarra son parte de mi vida. Si bien me forme como profesor de música, hoy en día son actividades que realizo como hobbie. Los momentos que paso haciendo esto me permiten relajarme y reconectar conmigo mismo.',
+      image: ['/images/hobbies/canto.jpeg',],
       id: 'hobbie-3',
     },
     {
       hobbieEN:
-      'I really like watch anime, I usually watch shonen. My favorite anime is "One Piece" and I am currently streaming both the manga and the anime.',
+        'I really like watch anime, I usually watch shonen. My favorite anime is "One Piece" and I am currently streaming both the manga and the anime.',
       hobbieES:
-      'Me gusta mucho ver anime, normalmente suelo ver shonen. Mi anime favorito es "One Piece" y actualmente estoy en la emisión tanto del manga como el anime.',
-      image: 'string',
+        'Me gusta mucho ver anime, normalmente suelo ver shonen. Mi anime favorito es "One Piece" y actualmente estoy en la emisión tanto del manga como el anime.',
+      image: ['/images/hobbies/anime.jpeg',],
       id: 'hobbie-4',
     },
     {
       hobbieEN:
-      'Another hobby I enjoy is playing video games, hay muchos generos que me gustan aunque actualmente estoy jugando al "sekiro" and together with a friends we usually play "Age of Empires II", "League of Legends" or some other more casual game.',
+        'Another hobby I enjoy is playing video games, hay muchos generos que me gustan aunque actualmente estoy jugando al "sekiro" and together with a friends we usually play "Age of Empires II", "League of Legends" or some other more casual game.',
       hobbieES:
         'Otro hobbie del que disfruto es jugar video juegos, hay muchos generos que me gustan aunque actualmente estoy jugando al "sekiro" y junto a un grupo de amigos solemos jugar al "Age of empires II", al "League of Legends" o algun otro jugo mas casual.',
-      image: 'string',
+      image: ['/images/hobbies/games.jpeg',],
       id: 'hobbie-5',
     },
   ],

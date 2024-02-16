@@ -1,5 +1,11 @@
 @import '../../../../variables.scss';
 @import '../../../../mixins.scss';
+.cv {
+  font-size: $title;
+  transition:
+    color 0.3s ease,
+    filter 0.3s ease;
+}
 .darkMode {
   color: $violet;
   &:hover {

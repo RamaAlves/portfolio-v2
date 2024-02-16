@@ -5,7 +5,7 @@ import { DARK_MODE } from '../constants/localStorageConstants';
 export const ThemeContext = createContext<ThemeContextType>(null!);
 
 export function ThemeProvider({ children }: ChildrenType) {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [darkMode, setDarkMode] = useState<boolean>(true);
   const value = { darkMode, setDarkMode };
   useEffect(() => {
     const theme = JSON.parse(localStorage.getItem(DARK_MODE)!);

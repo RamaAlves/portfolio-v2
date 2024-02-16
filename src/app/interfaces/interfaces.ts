@@ -2,7 +2,7 @@ export interface HobbieSchema {
   id: string;
   hobbieEN: string;
   hobbieES: string;
-  image: string;
+  image: string[];
 }
 export interface DescriptionScheme {
   id: string;
@@ -18,7 +18,7 @@ export interface PrhaseScheme {
   id: string;
   prhase: string;
 }
-export interface ProyectSchema {
+export interface ProjectSchema {
   id: string;
   nameES: string;
   nameEN: string;
