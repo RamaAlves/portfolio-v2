@@ -1,22 +1,23 @@
 //colors
-$light-blue: #1f41ba;
+/* $light-blue: #1f41ba;
 $blue: #2135b5;
 $blue-transparent: #0a186d80;
-$blue-transparent-border: #0a186d46;
-$dark-blue: #0a0a3b;
+$blue-transparent-border: #0a186d46; */
+/* $dark-blue: #0a0a3b; */
 $light-violet: #5851db;
 $violet: #3932b8;
+$violet-transparent: #3932b880;
+$violet-transparent-border: #3932b846;
 $dark-violet: #252175;
-$white: #dedede;
+$dark-violet-transparent: #252175ad;
+$dark-violet-transparent-hover: #252175c9;
 $black: #121212;
 $black-transparent: #12121280;
 $light-grey: #7e7e7e;
+$white: #dedede;
+$white-muted: #bebebe;
 $white-transparent: #f3f4f580;
 $white-transparent-border: #f3f4f546;
-$violet-transparent: #3932b880;
-$violet-transparent-border: #3932b846;
-$dark-violet-transparent: #252175ad;
-$dark-violet-transparent-hover: #252175c9;
 $dark-violet-transparent-border: #25217546;
 
 //sizes
@@ -35,7 +36,7 @@ $button: 1.4rem;
 $anchor-mobile: 1.5rem;
 $anchor-desktop: 1.7rem;
 $height-nav: 70px;
-$height-footer: 90px;
+$height-footer: 300px;
 
 //breakpoints
 

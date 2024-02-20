@@ -8,7 +8,7 @@
   height: max-content;
   overflow: auto;
   overflow-x: hidden;
-  margin-top: $height-nav;
+  /*   margin-top: $height-nav; */
   @include scrollbar-style;
   @include lg {
     margin-top: 0;

@@ -37,7 +37,7 @@
     &:nth-child(3) {
       left: -180px;
       top: 96px;
-      background-color: $blue;
+      background-color: $dark-violet;
       animation-delay: 3s;
       animation-direction: alternate-reverse;
       animation-timing-function: cubic-bezier(0.63, 1.28, 0.92, 0.48);
@@ -74,7 +74,7 @@
     &:nth-child(8) {
       left: 45px;
       top: 363px;
-      background-color: $blue;
+      background-color: $dark-violet;
       animation-delay: 1.4s;
       animation-direction: alternate-reverse;
       animation-timing-function: cubic-bezier(0.3, 1.35, 0.7, 0.16);
@@ -119,7 +119,7 @@
     &:nth-child(14) {
       left: 132px;
       top: 486px;
-      background-color: $blue;
+      background-color: $dark-violet;
       animation-delay: 1.9s;
       animation-direction: alternate;
       animation-timing-function: ease-out;
@@ -142,7 +142,7 @@
     &:nth-child(17) {
       left: 283px;
       top: 562px;
-      background-color: $blue;
+      background-color: $dark-violet;
       animation-delay: 1.5s;
       animation-direction: alternate-reverse;
       animation-timing-function: ease-in-out;
@@ -172,7 +172,7 @@
     &:nth-child(21) {
       left: -7px;
       top: 698px;
-      background-color: $blue;
+      background-color: $dark-violet;
       animation-delay: 0.9s;
       animation-direction: alternate;
       animation-timing-function: cubic-bezier(0.06, 0.76, 1, 0.47);
@@ -243,6 +243,80 @@
       animation-direction: alternate;
       animation-timing-function: ease-in-out;
     }
+    &:nth-child(31) {
+      left: -27px;
+      top: 898px;
+      background-color: $dark-violet;
+      animation-delay: 0.4s;
+      animation-direction: alternate;
+      animation-timing-function: cubic-bezier(0.6, 0.76, 1, 0.47);
+    }
+    &:nth-child(32) {
+      left: -75px;
+      top: 918px;
+      animation-delay: 0.1s;
+      animation-direction: alternate-reverse;
+      animation-timing-function: cubic-bezier(0.25, 0.614, 0.32, 1);
+    }
+    &:nth-child(33) {
+      left: 76px;
+      top: 1032px;
+      animation-delay: 1.7s;
+      animation-direction: alternate;
+      animation-timing-function: cubic-bezier(0.1, 1, 0.2, 1);
+    }
+    &:nth-child(34) {
+      left: 547px;
+      top: 841px;
+      background-color: $white;
+      animation-delay: 0.7s;
+      animation-direction: alternate-reverse;
+      animation-timing-function: cubic-bezier(0.15, 0.88, 0.74, 1);
+    }
+    &:nth-child(35) {
+      left: -143px;
+      top: 976px;
+      animation-delay: 1.7s;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+    }
+    &:nth-child(36) {
+      left: 3px;
+      top: 900px;
+      animation-delay: 2.9s;
+      background-color: $white;
+      animation-direction: alternate-reverse;
+      animation-timing-function: ease;
+    }
+    &:nth-child(37) {
+      left: 142px;
+      top: 997px;
+      animation-delay: 1.6s;
+      animation-direction: alternate;
+      animation-timing-function: cubic-bezier(0.56, 1.8, 0.1, 0.1);
+    }
+    &:nth-child(38) {
+      left: 622px;
+      top: 897px;
+      animation-delay: 0.5s;
+      animation-direction: alternate;
+      animation-timing-function: ease-out;
+    }
+    &:nth-child(39) {
+      left: 125px;
+      top: 914px;
+      background-color: $white;
+      animation-delay: 1.4s;
+      animation-direction: alternate-reverse;
+      animation-timing-function: ease-in;
+    }
+    &:nth-child(40) {
+      left: 642px;
+      top: 742px;
+      animation-delay: 2.8s;
+      animation-direction: alternate;
+      animation-timing-function: ease-in-out;
+    }
   }
 }
 
@@ -284,7 +358,7 @@
       background-color: $light-violet;
     }
     &:nth-child(4) {
-      background-color: $violet;
+      background-color: $dark-violet;
     }
     &:nth-child(5) {
       background-color: $violet;
@@ -293,7 +367,7 @@
       background-color: $white;
     }
     &:nth-child(7) {
-      background-color: $violet;
+      background-color: $dark-violet;
     }
     &:nth-child(8) {
       background-color: $light-violet;
@@ -311,7 +385,7 @@
       background-color: $violet;
     }
     &:nth-child(13) {
-      background-color: $violet;
+      background-color: $dark-violet;
     }
     &:nth-child(14) {
       background-color: $light-violet;
@@ -332,7 +406,7 @@
       background-color: $white;
     }
     &:nth-child(20) {
-      background-color: $violet;
+      background-color: $dark-violet;
     }
     &:nth-child(21) {
       background-color: $light-violet;
@@ -341,7 +415,7 @@
       background-color: $violet;
     }
     &:nth-child(23) {
-      background-color: $violet;
+      background-color: $dark-violet;
     }
     &:nth-child(24) {
       background-color: $white;
@@ -356,12 +430,42 @@
       background-color: $violet;
     }
     &:nth-child(28) {
-      background-color: $violet;
+      background-color: $dark-violet;
     }
     &:nth-child(29) {
       background-color: $white;
     }
     &:nth-child(30) {
+      background-color: $violet;
+    }
+    &:nth-child(31) {
+      background-color: $light-violet;
+    }
+    &:nth-child(32) {
+      background-color: $violet;
+    }
+    &:nth-child(33) {
+      background-color: $dark-violet;
+    }
+    &:nth-child(34) {
+      background-color: $white;
+    }
+    &:nth-child(35) {
+      background-color: $violet;
+    }
+    &:nth-child(36) {
+      background-color: $white;
+    }
+    &:nth-child(37) {
+      background-color: $dark-violet;
+    }
+    &:nth-child(38) {
+      background-color: $violet;
+    }
+    &:nth-child(39) {
+      background-color: $white;
+    }
+    &:nth-child(40) {
       background-color: $violet;
     }
   }
@@ -457,6 +561,36 @@
       background-color: $light-grey;
     }
     &:nth-child(30) {
+      background-color: $violet;
+    }
+    &:nth-child(31) {
+      background-color: $light-violet;
+    }
+    &:nth-child(32) {
+      background-color: $violet;
+    }
+    &:nth-child(33) {
+      background-color: $violet;
+    }
+    &:nth-child(34) {
+      background-color: $white;
+    }
+    &:nth-child(35) {
+      background-color: $violet;
+    }
+    &:nth-child(36) {
+      background-color: $white;
+    }
+    &:nth-child(37) {
+      background-color: $violet;
+    }
+    &:nth-child(38) {
+      background-color: $violet;
+    }
+    &:nth-child(39) {
+      background-color: $white;
+    }
+    &:nth-child(40) {
       background-color: $violet;
     }
   }

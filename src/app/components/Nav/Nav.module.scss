@@ -16,6 +16,7 @@
   display: none;
   @include lg {
     display: flex;
+    position: absolute;
   }
   .info {
     display: flex;
@@ -43,8 +44,11 @@
 
 .navbarOverlay {
   z-index: 1000;
-  left: 0;
-  top: 30px;
+  position: fixed;
+  transition:
+    left 0.3s ease,
+    top 0.3s ease,
+    opacity 0.3s ease;
   .logo {
     width: 50px;
     border-radius: 50%;
@@ -52,7 +56,8 @@
     cursor: pointer;
     transition:
       left 2s ease,
-      filter 0.3s ease;
+      filter 0.3s ease,
+      opacity 0.3s ease;
     transform: translateY(-50%);
   }
   .hideButton {
@@ -62,10 +67,14 @@
   .showButton {
     top: 47px;
     left: 15px;
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
   }
   .cardOptions {
-    border-top-right-radius: calc($border-radius * 2);
-    border-bottom-right-radius: calc($border-radius * 2);
+    border-top-right-radius: calc($border-radius);
+    border-bottom-right-radius: calc($border-radius);
     position: absolute;
     display: flex;
     align-items: center;
@@ -74,6 +83,7 @@
     border-left: none;
     transition:
       left 1.4s ease-in-out,
+      opacity 1.4s ease,
       background-color 0.3s ease;
     .containerOptions {
       display: flex;
@@ -109,24 +119,37 @@
   .expandedOptions {
     top: 0;
     left: 0;
+    opacity: 1;
   }
   .contractedOptions {
     top: 0;
     left: -260px;
+    opacity: 0;
   }
 }
 .overlayOn {
   display: none;
 
   @include lg {
-    position: fixed;
+    pointer-events: all;
     display: flex;
     opacity: 1;
+    left: 0;
+    top: 30px;
   }
 }
 .overlayOff {
-  display: none;
+  pointer-events: none;
   opacity: 0;
+  top: 0px;
+  left: 5%;
+  @include xl {
+    left: 10%;
+  }
+  .cardOptions {
+    opacity: 0;
+    transition: opacity 0s;
+  }
 }
 .darkModeOverlay {
   .logo {
@@ -143,9 +166,9 @@
         a {
           li {
             @include interact-anchor;
+            filter: none;
             &:hover {
-              color: $light-grey;
-              filter: none;
+              color: $white;
             }
           }
         }
@@ -264,9 +287,10 @@
 }
 
 .darkMode {
-  background-color: $black;
-  border-bottom: 1px solid $white;
-  filter: drop-shadow(0px 0px 10px $white);
+  background: linear-gradient($black-transparent 50%, transparent 100%);
+  backdrop-filter: blur(4px);
+  /* border-bottom: 1px solid $white; */
+  /* filter: drop-shadow(0px 0px 10px $white) */
   .info {
     &:hover,
     &:focus {
@@ -280,7 +304,7 @@
     }
   }
   .button {
-    color: $violet;
+    color: $white;
   }
   .routes {
     a {

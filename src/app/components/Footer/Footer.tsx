@@ -1,11 +1,19 @@
 import { useLang } from '../../hooks/useLang';
 import { ENGLISH } from '../../constants/Languages';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import {
+  faFacebook,
+  faGithub,
+  faInstagram,
+  faLinkedin,
+  faTelegram,
+  faXTwitter,
+} from '@fortawesome/free-brands-svg-icons';
 import { faAnglesDown, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import styles from './Footer.module.scss';
 import { useTheme } from '../../hooks/useTheme';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 
 export function Footer() {
   const { lang } = useLang();
@@ -30,35 +38,73 @@ export function Footer() {
         ].join(' ')}
         ref={ref}
       >
-        {lang == ENGLISH ? (
-          <p className={styles.contactMe}>Contact me!</p>
-        ) : (
-          <p className={styles.contactMe}>Contactame!</p>
-        )}
-        {/* <a
-        href="https://wa.me/+5493624268960?text=Hola!%20contactame%20si%20deseas%20coordinar%20una%20entrevista!%20(☞ﾟヮﾟ)☞"
-        target="_blank"
-        >
-        <FontAwesomeIcon icon={faWhatsapp} />
-      </a> */}
-        <ul className={styles.contacts}>
-          <a href="https://www.linkedin.com/in/ramaalves" target="_blank">
-            <FontAwesomeIcon icon={faLinkedin} />
-            <p>LinkedIn</p>
-          </a>
-          {/* <a href="https://t.me/RamiroAlves" target="_blank">
-        <FontAwesomeIcon icon={faTelegram} />
-      </a> */}
-          <a href="https://github.com/RamaAlves" target="_blank">
-            <FontAwesomeIcon icon={faGithub} />
-            <p>GitHub</p>
-          </a>
-          <a href="mailto:ramiroalvesprof@outlook.com" target="_blank">
-            <FontAwesomeIcon icon={faEnvelope} />
-            <p>Email</p>
-          </a>
-        </ul>
-        <p className={styles.copy}>©️ 2024</p>
+        <div className={styles.column}>
+          {lang == ENGLISH ? (
+            <h3 className={styles.contactMe}>My social media</h3>
+          ) : (
+            <h3 className={styles.contactMe}>Mis redes sociales</h3>
+          )}
+          <ul className={styles.contacts}>
+            <a href="https://www.linkedin.com/in/ramaalves" target="_blank">
+              <FontAwesomeIcon icon={faLinkedin} />
+              {/* <p>LinkedIn</p> */}
+            </a>
+            <a href="https://github.com/RamaAlves" target="_blank">
+              <FontAwesomeIcon icon={faGithub} />
+              {/* <p>GitHub</p> */}
+            </a>
+            <a href="https://www.instagram.com/ramiro_alves_/" target="_blank">
+              <FontAwesomeIcon icon={faInstagram} />
+              {/* <p>Instagram</p> */}
+            </a>
+            <a href="https://twitter.com/1394Alves" target="_blank">
+              <FontAwesomeIcon icon={faXTwitter} />
+              {/* <p>X</p> */}
+            </a>
+            <a
+              href="https://www.facebook.com/ramiro.alves2?locale=es_LA"
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faFacebook} />
+              {/* <p>X</p> */}
+            </a>
+          </ul>
+        </div>
+        <div className={styles.column}>
+          {lang == ENGLISH ? (
+            <h3 className={styles.contactMe}>Contact me!</h3>
+          ) : (
+            <h3 className={styles.contactMe}>Contactame!</h3>
+          )}
+          <ul className={styles.contacts}>
+            <a href="mailto:ramiroalvesprof@outlook.com" target="_blank">
+              <FontAwesomeIcon icon={faEnvelope} />
+              <p>Email: ramiroalvesprof@outlook.com</p>
+            </a>
+            <a href="https://t.me/RamiroAlves" target="_blank">
+              <FontAwesomeIcon icon={faTelegram} />
+              {lang === ENGLISH ? <p>Text me!</p> : <p>Escribeme!</p>}
+            </a>
+          </ul>
+        </div>
+        <div className={styles.column}>
+          {lang == ENGLISH ? (
+            <h3 className={styles.contactMe}>Sections</h3>
+          ) : (
+            <h3 className={styles.contactMe}>Secciones</h3>
+          )}
+
+          <ul className={styles.routes}>
+            <Link to="/">
+              {lang == ENGLISH ? <li>Home</li> : <li>Inicio</li>}
+            </Link>
+
+            <Link to="/projects">
+              {lang == ENGLISH ? <li>Projects</li> : <li>Proyectos</li>}
+            </Link>
+          </ul>
+        </div>
+        <p className={styles.copy}>©️ Copyright 2024</p>
       </footer>
     </>
   );

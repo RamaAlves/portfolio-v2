@@ -26,53 +26,57 @@
 }
 .footer {
   width: 100%;
-  height: $height-footer;
+  min-height: $height-footer;
+  max-height: max-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 100;
-
   transition: all 0.3s ease;
   @include lg {
     flex-direction: row;
     flex-wrap: wrap;
-  }
-  .contactMe {
-    text-align: center;
-    @include lg {
-      width: 50%;
-      text-align: end;
-      padding-right: 2rem;
-      font-size: $title;
-    }
-  }
-  .contacts {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
     gap: 3rem;
-    @include lg {
-      width: 50%;
-      justify-content: flex-start;
-      gap: 2rem;
+  }
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    .contactMe {
+      text-align: center;
+      @include lg {
+        font-size: $title;
+      }
     }
-    a {
-      width: 60px;
+    .contacts {
       display: flex;
-      flex-direction: column;
+      width: 100%;
       justify-content: center;
       align-items: center;
-      @include anchor;
+      gap: 3rem;
+      @include lg {
+        width: 50%;
+        justify-content: flex-start;
+        gap: 2rem;
+      }
+      a {
+        /* width: 60px; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include anchor;
+      }
     }
   }
   .copy {
-    width: 100%;
+    flex-basis: 100%;
   }
 }
 .darkMode {
-  background-color: $black;
+  background-color: $black-transparent;
+  backdrop-filter: blur(4px);
   .contactMe {
     color: $white;
     filter: drop-shadow(0px 0px 4px $light-violet);

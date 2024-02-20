@@ -1,0 +1,917 @@
+@import '../../../../variables.scss';
+@import '../../../../mixins.scss';
+
+.button {
+  width: 300px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background-color: $black-transparent;
+  transition: background-color 0s ease;
+  border-radius: $border-radius;
+  outline: none;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 4px $violet;
+  /*animation: pulse 1s infinite; */
+  cursor: pointer;
+  @include lg {
+    width: 800px;
+    height: 200px;
+  }
+  .text {
+    position: absolute;
+    z-index: 100;
+    color: $violet-transparent;
+    transition: color 0s ease;
+    font-size: 2rem;
+    /* filter: drop-shadow(0px 0px 4px $dark-violet); */
+    /* text-shadow:
+      -1px 1px $dark-violet,
+      -1px -1px $dark-violet,
+      1px -1px $dark-violet,
+      1px 1px $dark-violet; */
+    @include lg {
+      font-size: 6rem;
+    }
+  }
+  .animateBlock {
+    z-index: 10;
+    mix-blend-mode: lighten;
+    position: absolute;
+    width: 80px;
+    height: 20px;
+    opacity: 0;
+    background-color: $dark-violet;
+    right: 1600px;
+    top: 100px; /* 
+    border-radius: none; */
+    transition:
+      right 0.6s ease,
+      top 0.6s ease,
+      opacity 0.2s ease;
+
+    &:nth-child(1) {
+      transition-delay: 0s;
+    }
+    &:nth-child(2) {
+      transition-delay: 0.005s;
+    }
+    &:nth-child(3) {
+      transition-delay: 0.015s;
+    }
+    &:nth-child(4) {
+      transition-delay: 0.01s;
+    }
+    &:nth-child(5) {
+      transition-delay: 0.03s;
+    }
+    &:nth-child(6) {
+      transition-delay: 0.025s;
+    }
+    &:nth-child(7) {
+      transition-delay: 0.02s;
+    }
+    &:nth-child(8) {
+      transition-delay: 0.045s;
+    }
+    &:nth-child(9) {
+      transition-delay: 0.04s;
+    }
+    &:nth-child(10) {
+      transition-delay: 0.035s;
+    }
+    &:nth-child(11) {
+      transition-delay: 0.05s;
+    }
+    &:nth-child(12) {
+      transition-delay: 0.065s;
+    }
+    &:nth-child(13) {
+      transition-delay: 0.055s;
+    }
+    &:nth-child(14) {
+      transition-delay: 0.075s;
+    }
+    &:nth-child(15) {
+      transition-delay: 0.07s;
+    }
+    &:nth-child(16) {
+      transition-delay: 0.06s;
+    }
+    &:nth-child(17) {
+      transition-delay: 0.09s;
+    }
+    &:nth-child(18) {
+      transition-delay: 0.085s;
+    }
+    &:nth-child(19) {
+      transition-delay: 0.095s;
+    }
+    &:nth-child(20) {
+      transition-delay: 0.08s;
+    }
+    &:nth-child(21) {
+      transition-delay: 0.1s;
+    }
+    &:nth-child(22) {
+      transition-delay: 0.11s;
+    }
+    &:nth-child(23) {
+      transition-delay: 0.135s;
+    }
+    &:nth-child(24) {
+      transition-delay: 0.145s;
+    }
+    &:nth-child(25) {
+      transition-delay: 0.13s;
+    }
+    &:nth-child(26) {
+      transition-delay: 0.115s;
+    }
+    &:nth-child(27) {
+      transition-delay: 0.12s;
+    }
+    &:nth-child(28) {
+      transition-delay: 0.125s;
+    }
+    &:nth-child(29) {
+      transition-delay: 0.105s;
+    }
+    &:nth-child(30) {
+      transition-delay: 0.14s;
+    }
+    &:nth-child(31) {
+      transition-delay: 0.185s;
+    }
+    &:nth-child(32) {
+      transition-delay: 0.17s;
+    }
+    &:nth-child(33) {
+      transition-delay: 0.15s;
+    }
+    &:nth-child(34) {
+      transition-delay: 0.165s;
+    }
+    &:nth-child(35) {
+      transition-delay: 0.155s;
+    }
+    &:nth-child(36) {
+      transition-delay: 0.19s;
+    }
+    &:nth-child(37) {
+      transition-delay: 0.16s;
+    }
+    &:nth-child(38) {
+      transition-delay: 0.175s;
+    }
+    &:nth-child(39) {
+      transition-delay: 0.195s;
+    }
+    &:nth-child(40) {
+      transition-delay: 0.18s;
+    }
+    &:nth-child(41) {
+      transition-delay: 0.245s;
+    }
+    &:nth-child(42) {
+      transition-delay: 0.23s;
+    }
+    &:nth-child(43) {
+      transition-delay: 0.2s;
+    }
+    &:nth-child(44) {
+      transition-delay: 0.235s;
+    }
+    &:nth-child(45) {
+      transition-delay: 0.24s;
+    }
+    &:nth-child(46) {
+      transition-delay: 0.215s;
+    }
+    &:nth-child(47) {
+      transition-delay: 0.225s;
+    }
+    &:nth-child(48) {
+      transition-delay: 0.205s;
+    }
+    &:nth-child(49) {
+      transition-delay: 0.21s;
+    }
+    &:nth-child(50) {
+      transition-delay: 0.22s;
+    }
+    &:nth-child(51) {
+      transition-delay: 0.25s;
+    }
+    &:nth-child(52) {
+      transition-delay: 0.26s;
+    }
+    &:nth-child(53) {
+      transition-delay: 0.27s;
+    }
+    &:nth-child(54) {
+      transition-delay: 0.255s;
+    }
+    &:nth-child(55) {
+      transition-delay: 0.285s;
+    }
+    &:nth-child(56) {
+      transition-delay: 0.275s;
+    }
+    &:nth-child(57) {
+      transition-delay: 0.29s;
+    }
+    &:nth-child(58) {
+      transition-delay: 0.28s;
+    }
+    &:nth-child(59) {
+      transition-delay: 0.295s;
+    }
+    &:nth-child(60) {
+      transition-delay: 0.265s;
+    }
+    &:nth-child(61) {
+      transition-delay: 0.3s;
+    }
+    &:nth-child(62) {
+      transition-delay: 0.345s;
+    }
+    &:nth-child(63) {
+      transition-delay: 0.33s;
+    }
+    &:nth-child(64) {
+      transition-delay: 0.315s;
+    }
+    &:nth-child(65) {
+      transition-delay: 0.335s;
+    }
+    &:nth-child(66) {
+      transition-delay: 0.34s;
+    }
+    &:nth-child(67) {
+      transition-delay: 0.32s;
+    }
+    &:nth-child(68) {
+      transition-delay: 0.31s;
+    }
+    &:nth-child(69) {
+      transition-delay: 0.325s;
+    }
+    &:nth-child(70) {
+      transition-delay: 0.305s;
+    }
+    &:nth-child(71) {
+      transition-delay: 0.39s;
+    }
+    &:nth-child(72) {
+      transition-delay: 0.385s;
+    }
+    &:nth-child(73) {
+      transition-delay: 0.36s;
+    }
+    &:nth-child(74) {
+      transition-delay: 0.355s;
+    }
+    &:nth-child(75) {
+      transition-delay: 0.38s;
+    }
+    &:nth-child(76) {
+      transition-delay: 0.37s;
+    }
+    &:nth-child(77) {
+      transition-delay: 0.375s;
+    }
+    &:nth-child(78) {
+      transition-delay: 0.365s;
+    }
+    &:nth-child(79) {
+      transition-delay: 0.395s;
+    }
+    &:nth-child(80) {
+      transition-delay: 0.35s;
+    }
+    &:nth-child(81) {
+      transition-delay: 0.43s;
+    }
+    &:nth-child(82) {
+      transition-delay: 0.445s;
+    }
+    &:nth-child(83) {
+      transition-delay: 0.405s;
+    }
+    &:nth-child(84) {
+      transition-delay: 0.415s;
+    }
+    &:nth-child(85) {
+      transition-delay: 0.4s;
+    }
+    &:nth-child(86) {
+      transition-delay: 0.44s;
+    }
+    &:nth-child(87) {
+      transition-delay: 0.435s;
+    }
+    &:nth-child(88) {
+      transition-delay: 0.41s;
+    }
+    &:nth-child(89) {
+      transition-delay: 0.425s;
+    }
+    &:nth-child(90) {
+      transition-delay: 0.42s;
+    }
+    &:nth-child(91) {
+      transition-delay: 0.475s;
+    }
+    &:nth-child(92) {
+      transition-delay: 0.495s;
+    }
+    &:nth-child(93) {
+      transition-delay: 0.47s;
+    }
+    &:nth-child(94) {
+      transition-delay: 0.45s;
+    }
+    &:nth-child(95) {
+      transition-delay: 0.455s;
+    }
+    &:nth-child(96) {
+      transition-delay: 0.465s;
+    }
+    &:nth-child(97) {
+      transition-delay: 0.485s;
+    }
+    &:nth-child(98) {
+      transition-delay: 0.49s;
+    }
+    &:nth-child(99) {
+      transition-delay: 0.48s;
+    }
+    &:nth-child(100) {
+      transition-delay: 0.46s;
+    }
+  }
+
+  &:hover {
+    filter: drop-shadow(0 0 4px $light-violet);
+    /* animation: pulse 1s linear infinite; */
+    /* background-color: $white; */
+    transition: filter 1s 5.6s ease;
+
+    .text {
+      color: $white;
+      animation: effect-color 1s 5.8s ease infinite;
+      transition: color 1s 5.6s ease;
+    }
+
+    .animateBlock {
+      opacity: 1;
+      transition:
+        right 0.6s,
+        top 0.6s,
+        opacity 1s ease;
+
+      &:nth-child(1) {
+        right: 0;
+        top: 0;
+        transition-delay: 0s;
+      }
+      &:nth-child(2) {
+        right: 0;
+        top: calc(20px * 1);
+        transition-delay: 0.05s;
+      }
+      &:nth-child(3) {
+        right: 0;
+        top: calc(20px * 2);
+        transition-delay: 0.15s;
+      }
+      &:nth-child(4) {
+        right: 0;
+        top: calc(20px * 3);
+        transition-delay: 0.1s;
+      }
+      &:nth-child(5) {
+        right: 0;
+        top: calc(20px * 4);
+        transition-delay: 0.3s;
+      }
+      &:nth-child(6) {
+        right: 0;
+        top: calc(20px * 5);
+        transition-delay: 0.25s;
+      }
+      &:nth-child(7) {
+        right: 0;
+        top: calc(20px * 6);
+        transition-delay: 0.2s;
+      }
+      &:nth-child(8) {
+        right: 0;
+        top: calc(20px * 7);
+        transition-delay: 0.45s;
+      }
+      &:nth-child(9) {
+        right: 0;
+        top: calc(20px * 8);
+        transition-delay: 0.4s;
+      }
+      &:nth-child(10) {
+        right: 0;
+        top: calc(20px * 9);
+        transition-delay: 0.35s;
+      }
+      &:nth-child(11) {
+        right: 80px;
+        top: calc(20px * 0);
+        transition-delay: 0.5s;
+      }
+      &:nth-child(12) {
+        right: 80px;
+        top: calc(20px * 1);
+        transition-delay: 0.65s;
+      }
+      &:nth-child(13) {
+        right: 80px;
+        top: calc(20px * 2);
+        transition-delay: 0.55s;
+      }
+      &:nth-child(14) {
+        right: 80px;
+        top: calc(20px * 3);
+        transition-delay: 0.75s;
+      }
+      &:nth-child(15) {
+        right: 80px;
+        top: calc(20px * 4);
+        transition-delay: 0.7s;
+      }
+      &:nth-child(16) {
+        right: 80px;
+        top: calc(20px * 5);
+        transition-delay: 0.6s;
+      }
+      &:nth-child(17) {
+        right: 80px;
+        top: calc(20px * 6);
+        transition-delay: 0.9s;
+      }
+      &:nth-child(18) {
+        right: 80px;
+        top: calc(20px * 7);
+        transition-delay: 0.85s;
+      }
+      &:nth-child(19) {
+        right: 80px;
+        top: calc(20px * 8);
+        transition-delay: 0.95s;
+      }
+      &:nth-child(20) {
+        right: 80px;
+        top: calc(20px * 9);
+        transition-delay: 0.8s;
+      }
+      &:nth-child(21) {
+        right: 160px;
+        top: calc(20px * 0);
+        transition-delay: 1s;
+      }
+      &:nth-child(22) {
+        right: 160px;
+        top: calc(20px * 1);
+        transition-delay: 1.1s;
+      }
+      &:nth-child(23) {
+        right: 160px;
+        top: calc(20px * 2);
+        transition-delay: 1.35s;
+      }
+      &:nth-child(24) {
+        right: 160px;
+        top: calc(20px * 3);
+        transition-delay: 1.45s;
+      }
+      &:nth-child(25) {
+        right: 160px;
+        top: calc(20px * 4);
+        transition-delay: 1.3s;
+      }
+      &:nth-child(26) {
+        right: 160px;
+        top: calc(20px * 5);
+        transition-delay: 1.15s;
+      }
+      &:nth-child(27) {
+        right: 160px;
+        top: calc(20px * 6);
+        transition-delay: 1.2s;
+      }
+      &:nth-child(28) {
+        right: 160px;
+        top: calc(20px * 7);
+        transition-delay: 1.25s;
+      }
+      &:nth-child(29) {
+        right: 160px;
+        top: calc(20px * 8);
+        transition-delay: 1.05s;
+      }
+      &:nth-child(30) {
+        right: 160px;
+        top: calc(20px * 9);
+        transition-delay: 1.4s;
+      }
+      &:nth-child(31) {
+        right: 240px;
+        top: calc(20px * 0);
+        transition-delay: 1.85s;
+      }
+      &:nth-child(32) {
+        right: 240px;
+        top: calc(20px * 1);
+        transition-delay: 1.7s;
+      }
+      &:nth-child(33) {
+        right: 240px;
+        top: calc(20px * 2);
+        transition-delay: 1.5s;
+      }
+      &:nth-child(34) {
+        right: 240px;
+        top: calc(20px * 3);
+        transition-delay: 1.65s;
+      }
+      &:nth-child(35) {
+        right: 240px;
+        top: calc(20px * 4);
+        transition-delay: 1.55s;
+      }
+      &:nth-child(36) {
+        right: 240px;
+        top: calc(20px * 5);
+        transition-delay: 1.9s;
+      }
+      &:nth-child(37) {
+        right: 240px;
+        top: calc(20px * 6);
+        transition-delay: 1.6s;
+      }
+      &:nth-child(38) {
+        right: 240px;
+        top: calc(20px * 7);
+        transition-delay: 1.75s;
+      }
+      &:nth-child(39) {
+        right: 240px;
+        top: calc(20px * 8);
+        transition-delay: 1.95s;
+      }
+      &:nth-child(40) {
+        right: 240px;
+        top: calc(20px * 9);
+        transition-delay: 1.8s;
+      }
+      &:nth-child(41) {
+        right: 320px;
+        top: calc(20px * 0);
+        transition-delay: 2.45s;
+      }
+      &:nth-child(42) {
+        right: 320px;
+        top: calc(20px * 1);
+        transition-delay: 2.3s;
+      }
+      &:nth-child(43) {
+        right: 320px;
+        top: calc(20px * 2);
+        transition-delay: 2s;
+      }
+      &:nth-child(44) {
+        right: 320px;
+        top: calc(20px * 3);
+        transition-delay: 2.35s;
+      }
+      &:nth-child(45) {
+        right: 320px;
+        top: calc(20px * 4);
+        transition-delay: 2.4s;
+      }
+      &:nth-child(46) {
+        right: 320px;
+        top: calc(20px * 5);
+        transition-delay: 2.15s;
+      }
+      &:nth-child(47) {
+        right: 320px;
+        top: calc(20px * 6);
+        transition-delay: 2.25s;
+      }
+      &:nth-child(48) {
+        right: 320px;
+        top: calc(20px * 7);
+        transition-delay: 2.05s;
+      }
+      &:nth-child(49) {
+        right: 320px;
+        top: calc(20px * 8);
+        transition-delay: 2.1s;
+      }
+      &:nth-child(50) {
+        right: 320px;
+        top: calc(20px * 9);
+        transition-delay: 2.2s;
+      }
+      &:nth-child(51) {
+        right: 400px;
+        top: calc(20px * 0);
+        transition-delay: 2.5s;
+      }
+      &:nth-child(52) {
+        right: 400px;
+        top: calc(20px * 1);
+        transition-delay: 2.6s;
+      }
+      &:nth-child(53) {
+        right: 400px;
+        top: calc(20px * 2);
+        transition-delay: 2.7s;
+      }
+      &:nth-child(54) {
+        right: 400px;
+        top: calc(20px * 3);
+        transition-delay: 2.55s;
+      }
+      &:nth-child(55) {
+        right: 400px;
+        top: calc(20px * 4);
+        transition-delay: 2.85s;
+      }
+      &:nth-child(56) {
+        right: 400px;
+        top: calc(20px * 5);
+        transition-delay: 2.75s;
+      }
+      &:nth-child(57) {
+        right: 400px;
+        top: calc(20px * 6);
+        transition-delay: 2.9s;
+      }
+      &:nth-child(58) {
+        right: 400px;
+        top: calc(20px * 7);
+        transition-delay: 2.8s;
+      }
+      &:nth-child(59) {
+        right: 400px;
+        top: calc(20px * 8);
+        transition-delay: 2.95s;
+      }
+      &:nth-child(60) {
+        right: 400px;
+        top: calc(20px * 9);
+        transition-delay: 2.65s;
+      }
+      &:nth-child(61) {
+        right: 480px;
+        top: calc(20px * 0);
+        transition-delay: 3s;
+      }
+      &:nth-child(62) {
+        right: 480px;
+        top: calc(20px * 1);
+        transition-delay: 3.45s;
+      }
+      &:nth-child(63) {
+        right: 480px;
+        top: calc(20px * 2);
+        transition-delay: 3.3s;
+      }
+      &:nth-child(64) {
+        right: 480px;
+        top: calc(20px * 3);
+        transition-delay: 3.15s;
+      }
+      &:nth-child(65) {
+        right: 480px;
+        top: calc(20px * 4);
+        transition-delay: 3.35s;
+      }
+      &:nth-child(66) {
+        right: 480px;
+        top: calc(20px * 5);
+        transition-delay: 3.4s;
+      }
+      &:nth-child(67) {
+        right: 480px;
+        top: calc(20px * 6);
+        transition-delay: 3.2s;
+      }
+      &:nth-child(68) {
+        right: 480px;
+        top: calc(20px * 7);
+        transition-delay: 3.1s;
+      }
+      &:nth-child(69) {
+        right: 480px;
+        top: calc(20px * 8);
+        transition-delay: 3.25s;
+      }
+      &:nth-child(70) {
+        right: 480px;
+        top: calc(20px * 9);
+        transition-delay: 3.05s;
+      }
+      &:nth-child(71) {
+        right: 560px;
+        top: calc(20px * 0);
+        transition-delay: 3.9s;
+      }
+      &:nth-child(72) {
+        right: 560px;
+        top: calc(20px * 1);
+        transition-delay: 3.85s;
+      }
+      &:nth-child(73) {
+        right: 560px;
+        top: calc(20px * 2);
+        transition-delay: 3.6s;
+      }
+      &:nth-child(74) {
+        right: 560px;
+        top: calc(20px * 3);
+        transition-delay: 3.55s;
+      }
+      &:nth-child(75) {
+        right: 560px;
+        top: calc(20px * 4);
+        transition-delay: 3.8s;
+      }
+      &:nth-child(76) {
+        right: 560px;
+        top: calc(20px * 5);
+        transition-delay: 3.7s;
+      }
+      &:nth-child(77) {
+        right: 560px;
+        top: calc(20px * 6);
+        transition-delay: 3.75s;
+      }
+      &:nth-child(78) {
+        right: 560px;
+        top: calc(20px * 7);
+        transition-delay: 3.65s;
+      }
+      &:nth-child(79) {
+        right: 560px;
+        top: calc(20px * 8);
+        transition-delay: 3.95s;
+      }
+      &:nth-child(80) {
+        right: 560px;
+        top: calc(20px * 9);
+        transition-delay: 3.5s;
+      }
+      &:nth-child(81) {
+        right: 640px;
+        top: calc(20px * 0);
+        transition-delay: 4.3s;
+      }
+      &:nth-child(82) {
+        right: 640px;
+        top: calc(20px * 1);
+        transition-delay: 4.45s;
+      }
+      &:nth-child(83) {
+        right: 640px;
+        top: calc(20px * 2);
+        transition-delay: 4.05s;
+      }
+      &:nth-child(84) {
+        right: 640px;
+        top: calc(20px * 3);
+        transition-delay: 4.15s;
+      }
+      &:nth-child(85) {
+        right: 640px;
+        top: calc(20px * 4);
+        transition-delay: 4s;
+      }
+      &:nth-child(86) {
+        right: 640px;
+        top: calc(20px * 5);
+        transition-delay: 4.4s;
+      }
+
+      &:nth-child(87) {
+        right: 640px;
+        top: calc(20px * 6);
+        transition-delay: 4.35s;
+      }
+      &:nth-child(88) {
+        right: 640px;
+        top: calc(20px * 7);
+        transition-delay: 4.1s;
+      }
+      &:nth-child(89) {
+        right: 640px;
+        top: calc(20px * 8);
+        transition-delay: 4.25s;
+      }
+      &:nth-child(90) {
+        right: 640px;
+        top: calc(20px * 9);
+        transition-delay: 4.2s;
+      }
+      &:nth-child(91) {
+        right: 720px;
+        top: calc(20px * 0);
+        transition-delay: 4.75s;
+      }
+      &:nth-child(92) {
+        right: 720px;
+        top: calc(20px * 1);
+        transition-delay: 4.95s;
+      }
+      &:nth-child(93) {
+        right: 720px;
+        top: calc(20px * 2);
+        transition-delay: 4.7s;
+      }
+      &:nth-child(94) {
+        right: 720px;
+        top: calc(20px * 3);
+        transition-delay: 4.5s;
+      }
+      &:nth-child(95) {
+        right: 720px;
+        top: calc(20px * 4);
+        transition-delay: 4.55s;
+      }
+      &:nth-child(96) {
+        right: 720px;
+        top: calc(20px * 5);
+        transition-delay: 4.65s;
+      }
+      &:nth-child(97) {
+        right: 720px;
+        top: calc(20px * 6);
+        transition-delay: 4.85s;
+      }
+      &:nth-child(98) {
+        right: 720px;
+        top: calc(20px * 7);
+        transition-delay: 4.9s;
+      }
+      &:nth-child(99) {
+        right: 720px;
+        top: calc(20px * 8);
+        transition-delay: 4.8s;
+      }
+      &:nth-child(100) {
+        right: 720px;
+        top: calc(20px * 9);
+        transition-delay: 4.6s;
+      }
+    }
+  }
+}
+
+@keyframes effect-color {
+  0% {
+    filter: drop-shadow(
+      0 0 0px $light-violet,
+      /* -4px 4px 4px $light-violet,
+      -4px -4px 4px $violet,
+      4px -4px 4px $dark-violet */
+    );
+  }
+
+  50% {
+    filter: drop-shadow(
+      /* 4px 4px 4px $violet,
+      -4px 4px 4px $dark-violet, */ 0 0 6px
+        $light-violet,
+      /*  4px -4px 4px $light-violet */
+    );
+  }
+  100% {
+    filter: drop-shadow(
+      0 0 0px $light-violet,
+      /* -4px 4px 4px $light-violet,
+      -4px -4px 4px $violet,
+      4px -4px 4px $dark-violet */
+    );
+  }
+}
+@keyframes pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 2px $light-violet);
+  }
+  50% {
+    filter: drop-shadow(0 0 4px $light-violet);
+  }
+}

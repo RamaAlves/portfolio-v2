@@ -3,7 +3,7 @@ import { personalDescription } from '../../info/personalDescription';
 import { useLang } from '../../hooks/useLang';
 import { ENGLISH } from '../../constants/Languages';
 import styles from './Nav.module.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faAnglesLeft,
@@ -25,6 +25,12 @@ export function Nav() {
   function handleShow() {
     setShowMenu(!showMenu);
   }
+
+  useEffect(() => {
+    if (inView) {
+      setOverlayOpen(false);
+    }
+  }, [inView]);
   return (
     <>
       <nav
@@ -35,7 +41,7 @@ export function Nav() {
         ].join(' ')}
         ref={ref}
       >
-        <Link to="/" className={styles.info}>
+        <Link to="/" unstable_viewTransition className={styles.info}>
           <img
             className={styles.logo}
             src="/images/assets/LogoRamaAlves.png"
@@ -44,11 +50,11 @@ export function Nav() {
           <p className={styles.name}>{personalDescription.name}</p>
         </Link>
         <ul className={styles.routes}>
-          <Link to="/">
+          <Link to="/" unstable_viewTransition>
             {lang == ENGLISH ? <li>Home</li> : <li>Inicio</li>}
           </Link>
 
-          <Link to="/projects">
+          <Link to="/projects" unstable_viewTransition>
             {lang == ENGLISH ? <li>Projects</li> : <li>Proyectos</li>}
           </Link>
         </ul>
@@ -80,11 +86,11 @@ export function Nav() {
         >
           <div className={styles.containerOptions}>
             <ul className={styles.routes}>
-              <Link to="/">
+              <Link to="/" unstable_viewTransition>
                 {lang == ENGLISH ? <li>Home</li> : <li>Inicio</li>}
               </Link>
 
-              <Link to="/projects">
+              <Link to="/projects" unstable_viewTransition>
                 {lang == ENGLISH ? <li>Projects</li> : <li>Proyectos</li>}
               </Link>
             </ul>
@@ -110,7 +116,7 @@ export function Nav() {
           darkMode ? styles.darkMode : styles.lightMode,
         ].join(' ')}
       >
-        <Link to="/" className={styles.info}>
+        <Link to="/" className={styles.info} unstable_viewTransition>
           <img
             className={styles.logo}
             src="/images/assets/LogoRamaAlves.png"
@@ -146,6 +152,7 @@ export function Nav() {
         <ul className={styles.routes}>
           <Link
             to="/"
+            unstable_viewTransition
             onClick={() => {
               handleShow();
             }}
@@ -154,6 +161,7 @@ export function Nav() {
           </Link>
           <Link
             to="/projects"
+            unstable_viewTransition
             onClick={() => {
               handleShow();
             }}

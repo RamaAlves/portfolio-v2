@@ -17,13 +17,6 @@ export function AboutMe() {
         darkMode ? styles.darkMode : styles.lightMode,
       ].join(' ')}
     >
-      <section className={styles.containerPrhases}>
-        <div className={styles.prhases}>
-          {personalDescription.prhases.map((prhase: PrhaseScheme) => {
-            return <p key={prhase.id}>{prhase.prhase}</p>;
-          })}
-        </div>
-      </section>
       {lang == ENGLISH ? <h2>About me</h2> : <h2>Sobre mí</h2>}
       <div className={styles.containerInfo}>
         <section className={styles.containerDescription}>
@@ -41,6 +34,13 @@ export function AboutMe() {
         </section>
         <Hobbies />
       </div>
+      <section className={styles.containerPrhases}>
+        <div className={styles.prhases}>
+          {personalDescription.prhases.map((prhase: PrhaseScheme) => {
+            return <p key={prhase.id}>{prhase.prhase}</p>;
+          })}
+        </div>
+      </section>
     </article>
   );
 }

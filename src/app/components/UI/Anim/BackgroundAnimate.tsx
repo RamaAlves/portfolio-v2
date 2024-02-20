@@ -39,6 +39,16 @@ export function BackgroundAnimate() {
       <li></li>
       <li></li>
       <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
     </ul>
   );
 }

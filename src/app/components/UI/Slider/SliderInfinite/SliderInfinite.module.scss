@@ -1,0 +1,32 @@
+.slider {
+  display: flex;
+  height: 100%;
+  width: calc(40vw * 16);
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-animation: scrollInfinite 30s linear infinite;
+  animation: scrollInfinite 50s linear infinite;
+  /*   transform: translateX(-50vw);
+ */
+  .slide {
+    height: 100%;
+    width: 40vw;
+    .image {
+      height: 100%;
+      width: 100%;
+      object-fit: fill;
+    }
+  }
+}
+
+@keyframes scrollInfinite {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(calc(-40vw * 8));
+    transform: translateX(calc(-40vw * 8));
+  }
+}
