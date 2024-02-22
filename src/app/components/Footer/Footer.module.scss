@@ -34,28 +34,35 @@
   align-items: center;
   z-index: 100;
   transition: all 0.3s ease;
-  @include lg {
+  @include md {
     flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: 2rem 12rem;
   }
   .column {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    .contactMe {
+    gap: 2rem;
+    min-height: 100px;
+    .titleColumn {
       text-align: center;
-      @include lg {
+      align-self: center;
+      @include md {
         font-size: $title;
       }
     }
-    .contacts {
+    .socialMedia,
+    .contacts,
+    .routes {
       display: flex;
       width: 100%;
       justify-content: center;
       align-items: center;
       gap: 3rem;
-      @include lg {
+      @include md {
         width: 50%;
         justify-content: flex-start;
         gap: 2rem;
@@ -69,19 +76,33 @@
         @include anchor;
       }
     }
+    .contacts,
+    .routes {
+      width: auto;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    .routes {
+      align-items: flex-start;
+    }
   }
   .copy {
     flex-basis: 100%;
+    text-align: center;
   }
 }
 .darkMode {
   background-color: $black-transparent;
   backdrop-filter: blur(4px);
-  .contactMe {
+  .titleColumn {
     color: $white;
     filter: drop-shadow(0px 0px 4px $light-violet);
   }
-  .contacts {
+  .contacts,
+  .socialMedia,
+  .routes {
     a {
       @include interact-anchor;
     }
@@ -94,11 +115,13 @@
 .lightMode {
   background-color: $black;
 
-  .contactMe {
+  .titleColumn {
     color: $white;
     filter: drop-shadow(0px 0px 4px $light-violet);
   }
-  .contacts {
+  .contacts,
+  .socialMedia,
+  .routes {
     a {
       @include interact-anchor;
     }

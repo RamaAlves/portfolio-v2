@@ -5,6 +5,7 @@ import { personalDescription } from '../../info/personalDescription';
 import { DescriptionScheme, PrhaseScheme } from '../../interfaces/interfaces';
 import styles from './AboutMe.module.scss';
 import { Hobbies } from '../Hobbies/Hobbies';
+import { BannerTitle } from '../UI/Banners/BannerTitles/BannerTitle';
 
 export function AboutMe() {
   const { lang } = useLang();
@@ -17,7 +18,8 @@ export function AboutMe() {
         darkMode ? styles.darkMode : styles.lightMode,
       ].join(' ')}
     >
-      {lang == ENGLISH ? <h2>About me</h2> : <h2>Sobre mí</h2>}
+      {/* {lang == ENGLISH ? <h2>About me</h2> : <h2>Sobre mí</h2>} */}
+      <BannerTitle esTitle={'Sobre mí'} enTitle={'About me'} />
       <div className={styles.containerInfo}>
         <section className={styles.containerDescription}>
           {personalDescription.description.map(

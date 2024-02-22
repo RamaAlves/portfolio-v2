@@ -40,11 +40,11 @@ export function Footer() {
       >
         <div className={styles.column}>
           {lang == ENGLISH ? (
-            <h3 className={styles.contactMe}>My social media</h3>
+            <h3 className={styles.titleColumn}>My social media</h3>
           ) : (
-            <h3 className={styles.contactMe}>Mis redes sociales</h3>
+            <h3 className={styles.titleColumn}>Mis redes sociales</h3>
           )}
-          <ul className={styles.contacts}>
+          <ul className={styles.socialMedia}>
             <a href="https://www.linkedin.com/in/ramaalves" target="_blank">
               <FontAwesomeIcon icon={faLinkedin} />
               {/* <p>LinkedIn</p> */}
@@ -72,9 +72,9 @@ export function Footer() {
         </div>
         <div className={styles.column}>
           {lang == ENGLISH ? (
-            <h3 className={styles.contactMe}>Contact me!</h3>
+            <h3 className={styles.titleColumn}>Contact me!</h3>
           ) : (
-            <h3 className={styles.contactMe}>Contactame!</h3>
+            <h3 className={styles.titleColumn}>Contactame!</h3>
           )}
           <ul className={styles.contacts}>
             <a href="mailto:ramiroalvesprof@outlook.com" target="_blank">
@@ -89,17 +89,17 @@ export function Footer() {
         </div>
         <div className={styles.column}>
           {lang == ENGLISH ? (
-            <h3 className={styles.contactMe}>Sections</h3>
+            <h3 className={styles.titleColumn}>Sections</h3>
           ) : (
-            <h3 className={styles.contactMe}>Secciones</h3>
+            <h3 className={styles.titleColumn}>Secciones</h3>
           )}
 
           <ul className={styles.routes}>
-            <Link to="/">
+            <Link to="/" unstable_viewTransition>
               {lang == ENGLISH ? <li>Home</li> : <li>Inicio</li>}
             </Link>
 
-            <Link to="/projects">
+            <Link to="/projects" unstable_viewTransition>
               {lang == ENGLISH ? <li>Projects</li> : <li>Proyectos</li>}
             </Link>
           </ul>

@@ -6,7 +6,7 @@ import { useTheme } from '../../hooks/useTheme';
 import styles from './Home.module.scss';
 /* import { ButtonNavigate } from '../../components/UI/Buttons/ButtonNavigate/ButtonNavigate';
 import { ENGLISH } from '../../constants/Languages'; */
-import { Divisor } from '../../components/UI/Anim/Divisor';
+/* import { Divisor } from '../../components/UI/Anim/Divisor'; */
 import { BackgroundAnimate } from '../../components/UI/Anim/BackgroundAnimate';
 import { Hero } from '../../components/Hero/Hero';
 import { AboutMe } from '../../components/AboutMe/AboutMe';
@@ -26,7 +26,7 @@ export function Home() {
     >
       <BackgroundAnimate />
       <Hero />
-      <Divisor />
+      {/* <Divisor /> */}
       {/* <section className={styles.projects}>
         {lang == ENGLISH ? <h2>Last projects</h2> : <h2>Ultimos proyectos</h2>}
         {

@@ -1,0 +1,27 @@
+@import '../../../../variables.scss';
+@import '../../../../mixins.scss';
+.socialMedia {
+  display: flex;
+  gap: 1rem;
+  @include lg {
+    flex-direction: column;
+  }
+  /* @include xl {
+    flex-direction: row;
+  } */
+  a {
+    @include anchor;
+    @include interact-anchor;
+    font-size: 1.2rem;
+    /* filter: none;
+    color: $light-violet;
+    &:hover {
+      color: $white;
+    } */
+    @include lg {
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+}

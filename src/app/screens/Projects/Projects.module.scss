@@ -7,15 +7,105 @@
   justify-content: flex-start;
   height: max-content;
   overflow: auto;
-  position: relative;
-  margin-top: $height-nav;
+  padding-top: $height-nav;
   @include scrollbar-style;
-  @include lg {
-    margin-top: 0;
-  }
-  h2 {
-    @include title-h2;
-  }
+  /* .bannerTitle {
+    position: relative;
+    height: 80px;
+    width: 100vw;
+    overflow: hidden;
+    filter: drop-shadow(0px 0px 6px $light-violet);
+    @include lg {
+      height: 100px;
+    }
+    @include xl {
+      height: 120px;
+    }
+    .containerTitle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      background-color: $dark-violet;
+      clip-path: polygon(20% 0%, 95% 0%, 80% 100%, 5% 100%);
+      z-index: 100;
+      @include lg {
+        padding-left: 4rem;
+        justify-content: flex-start;
+        clip-path: polygon(
+          0% 0%,
+          100% 0%,
+          100% 50%,
+          52% 50%,
+          47% 100%,
+          0% 100%
+        );
+      }
+      h2 {
+        @include title-h2;
+      }
+    }
+    .bgBars {
+      position: absolute;
+      width: 60%;
+      height: 46px;
+      bottom: 4px;
+      right: 0;
+      background: linear-gradient(270deg, $light-violet 60%, transparent);
+    }
+    .bars {
+      position: absolute;
+      width: 100%;
+      height: 8px;
+      border-radius: $border-radius;
+      &:nth-child(3) {
+        left: 100vw;
+        bottom: 18px;
+        background-color: $dark-violet-transparent;
+        filter: drop-shadow(0px 0px 4px $dark-violet-transparent);
+        animation: translateLeft 10s 4s ease infinite;
+      }
+      &:nth-child(4) {
+        left: 100vw;
+        bottom: 14px;
+        background-color: $white;
+        filter: drop-shadow(0px 0px 4px $white);
+        animation: translateLeft 8s 1.2s ease infinite;
+      }
+      &:nth-child(5) {
+        left: 100vw;
+        bottom: 24px;
+        background-color: $white-muted;
+        filter: drop-shadow(0px 0px 4px $white-muted);
+        animation: translateLeft 13s 5s ease infinite;
+      }
+      &:nth-child(6) {
+        left: 100vw;
+        bottom: 28px;
+        background-color: $violet;
+        filter: drop-shadow(0px 0px 4px $violet);
+        animation: translateLeft 9s 3s ease infinite;
+      }
+      &:nth-child(7) {
+        left: 100vw;
+        bottom: 8px;
+        background-color: $dark-violet;
+        filter: drop-shadow(0px 0px 4px $dark-violet);
+        animation: translateLeft 11s 2s ease infinite;
+      }
+      &:nth-child(8) {
+        left: 100vw;
+        bottom: 34px;
+        background-color: $black-transparent;
+        filter: drop-shadow(0px 0px 4px $black-transparent);
+        animation: translateLeft 13s ease infinite;
+      }
+    }
+  } */
   .projects {
     display: flex;
     flex-direction: column;
@@ -23,13 +113,23 @@
     justify-content: space-around;
     gap: 1rem;
     padding: 1rem 0;
-    z-index: 10;
     @include lg {
       flex-direction: row;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-around;
     }
+    /* .marginLg {
+      padding: 0;
+      margin: 0;
+      width: 0;
+      @include lg {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+      }
+    } */
   }
 }
 .darkMode {

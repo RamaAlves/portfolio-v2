@@ -5,6 +5,7 @@ import { Home } from './screens/Home/Home';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { LangProvider } from './contexts/LangContext';
 import { Projects } from './screens/Projects/Projects';
+import { NotFound404 } from './screens/NotFound404/NotFound404';
 
 function App() {
   const router = createBrowserRouter([
@@ -21,6 +22,11 @@ function App() {
         {
           path: '/Projects',
           element: <Projects />,
+          /* loader: Projects, */
+        },
+        {
+          path: '*',
+          element: <NotFound404 />,
           /* loader: Projects, */
         },
       ],

@@ -38,6 +38,9 @@
   @include lg {
     font-size: $title-lg;
   }
+  @include xl {
+    font-size: $title-xl;
+  }
 }
 @mixin sub-title {
   font-size: $sub-title;
@@ -68,15 +71,15 @@
 } */
 
 @mixin interact-anchor {
-  color: $white;
-  filter: drop-shadow(0px 0px 4px $light-grey);
+  color: $white; /* 
+  filter: drop-shadow(0px 0px 4px $light-grey); */
   transition:
     color 0.3s ease,
     filter 0.3s ease;
   &:hover,
   &:focus {
-    color: $light-violet;
-    filter: drop-shadow(0px 0px 4px $white);
+    color: $violet; /* 
+    filter: drop-shadow(0px 0px 4px $white); */
   }
 }
 

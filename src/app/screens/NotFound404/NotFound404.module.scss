@@ -1,0 +1,25 @@
+@import '../../variables.scss';
+@import '../../mixins.scss';
+.main {
+  height: calc(100vh - $height-nav - $height-footer);
+  display: flex;
+  margin-top: $height-nav;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  /* background-image: url('images/NotFound/4045.jpeg');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain; */
+  .image {
+    height: 100%;
+  }
+  .info {
+    .title {
+      font-size: 4rem;
+    }
+    .description {
+      font-size: $sub-title-lg;
+    }
+  }
+}

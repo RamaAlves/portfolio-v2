@@ -37,6 +37,11 @@ export interface ButtonNavigateType{
   route: string;
 }
 
+export interface BannerTitleType {
+  esTitle: string;
+  enTitle: string;
+}
+
 export interface ThemeContextType {
   darkMode: boolean;
   setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;

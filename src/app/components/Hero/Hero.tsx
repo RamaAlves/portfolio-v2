@@ -3,9 +3,10 @@ import { useLang } from '../../hooks/useLang';
 import { useTheme } from '../../hooks/useTheme';
 import { personalDescription } from '../../info/personalDescription';
 import { ResumeScheme } from '../../interfaces/interfaces';
-import { BackgroundTech } from '../UI/Anim/BackgroundTech';
+/* import { BackgroundTech } from '../UI/Anim/BackgroundTech'; */
 import { ButtonCv } from '../UI/Buttons/ButtonCv/ButtonCv';
-import { ButtonNavigate } from '../UI/Buttons/ButtonNavigate/ButtonNavigate';
+/* import { ButtonNavigate } from '../UI/Buttons/ButtonNavigate/ButtonNavigate'; */
+import { ButtonsSocialMedia } from '../UI/Buttons/ButtonsSocialMedia/ButtonsSocialMedia';
 import styles from './Hero.module.scss';
 
 export function Hero() {
@@ -18,7 +19,6 @@ export function Hero() {
         darkMode ? styles.darkMode : styles.lightMode,
       ].join(' ')}
     >
-      <BackgroundTech />
       <div className={styles.content}>
         <div className={styles.containerResume}>
           {personalDescription.resume.map((paragraph: ResumeScheme) => {
@@ -37,6 +37,10 @@ export function Hero() {
           /> */}
         {/* </div> */}
       </div>
+      <div className={styles.containerLinks}>
+        <ButtonsSocialMedia />
+      </div>
+      {/* <BackgroundTech /> */}
       <div className={styles.containerImage}>
         <img
           className={[styles.image, styles.child1].join(' ')}
