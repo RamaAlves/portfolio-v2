@@ -7,10 +7,17 @@ import {
   faLinkedin,
   faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
+import { useTheme } from '../../../../hooks/useTheme';
 
 export function ButtonsSocialMedia() {
+  const { darkMode } = useTheme();
   return (
-    <ul className={styles.socialMedia}>
+    <ul
+      className={[
+        styles.socialMedia,
+        darkMode ? styles.darkMode : styles.lightMode,
+      ].join(' ')}
+    >
       <a href="https://www.linkedin.com/in/ramaalves" target="_blank">
         <FontAwesomeIcon icon={faLinkedin} />
         {/* <p>LinkedIn</p> */}

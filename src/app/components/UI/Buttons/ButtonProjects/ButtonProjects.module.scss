@@ -24,16 +24,17 @@
   .text {
     position: absolute;
     z-index: 100;
-    color: $violet-transparent;
     transition: color 0s ease;
+    color: $white-transparent;
     font-size: 2rem;
     /* filter: drop-shadow(0px 0px 4px $dark-violet); */
     /* text-shadow:
-      -1px 1px $dark-violet,
-      -1px -1px $dark-violet,
-      1px -1px $dark-violet,
-      1px 1px $dark-violet; */
+    -1px 1px $dark-violet,
+    -1px -1px $dark-violet,
+    1px -1px $dark-violet,
+    1px 1px $dark-violet; */
     @include lg {
+      color: $violet-transparent;
       font-size: 6rem;
     }
   }
@@ -363,8 +364,12 @@
 
     .text {
       color: $white;
-      animation: effect-color 1s 5.8s ease infinite;
-      transition: color 1s 5.6s ease;
+      animation: effect-color 1s 3s ease infinite;
+      transition: color 1s 3s ease;
+      @include lg {
+        animation: effect-color 1s 5.8s ease infinite;
+        transition: color 1s 5.6s ease;
+      }
     }
 
     .animateBlock {

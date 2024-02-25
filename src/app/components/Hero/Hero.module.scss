@@ -22,14 +22,14 @@
   }
   .content {
     height: 80dvh;
-    align-self: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     @include lg {
+      align-self: flex-start;
       width: 720px;
     }
-    .containerResume {
+    /* .containerResume {
       .resumeParagraph {
         font-size: $text-size;
         text-wrap: pretty;
@@ -37,11 +37,20 @@
           font-size: $title;
         }
       }
+    } */
+    .intro {
+      padding-left: 10%;
+      align-self: flex-start;
+      font-size: $text-size;
+      text-wrap: pretty;
+      @include lg {
+        font-size: $title;
+      }
     }
   }
   .containerLinks {
     position: absolute;
-    z-index: 100;
+    z-index: 90;
     bottom: 4%;
     @include lg {
       bottom: auto;
@@ -66,7 +75,6 @@
       filter: drop-shadow(0px 0px 2px $white);
       right: -1000px;
       bottom: 0;
-      border-radius: $border-radius;
       @include xl {
         max-height: 920px;
         object-position: bottom;
@@ -109,6 +117,10 @@
         filter: drop-shadow(0px 0px 4px $white);
       }
     }
+    .intro {
+      color: $white; /* 
+      filter: drop-shadow(0px 0px 4px $white); */
+    }
     .containerButtons {
       background-color: transparent;
     }
@@ -128,6 +140,10 @@
         color: $black;
         filter: drop-shadow(0px 0px 4px $light-violet);
       }
+    }
+    .intro {
+      color: $black;
+      /* filter: drop-shadow(0px 0px 4px $violet); */
     }
     .containerButtons {
       background-color: transparent;

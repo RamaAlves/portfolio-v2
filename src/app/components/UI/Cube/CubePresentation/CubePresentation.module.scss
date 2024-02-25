@@ -1,0 +1,130 @@
+@import '../../../../variables.scss';
+@import '../../../../mixins.scss';
+
+.container {
+  width: 360px;
+  height: 120px;
+  perspective: 800px;
+  perspective-origin: 100% 60px;
+  align-self: flex-end;
+  @include md {
+    width: 600px;
+    height: 160px;
+    perspective-origin: 100% 80px;
+  }
+  .cube {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: spin 10s 0s linear infinite;
+
+    .face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      font-size: $title;
+      display: grid;
+      place-items: center;
+      background-color: $black-transparent;
+      border: 1px solid $white-transparent;
+      backdrop-filter: blur(4px);
+      @include md {
+        font-size: $title-lg;
+      }
+    }
+    .faceFront {
+      /* 
+      background-color: rgba(0, 255, 255, 0.353); */
+      transform: translateZ(60px);
+      @include md {
+        transform: translateZ(80px);
+      }
+    }
+    .faceBottom {
+      /* 
+      background-color: rgba(34, 145, 80, 0.353); */
+      transform: rotateX(-90deg) translateY(60px);
+      transform-origin: bottom center;
+      @include md {
+        transform: rotateX(-90deg) translateY(80px);
+      }
+    }
+    .faceBack {
+      /* 
+        background-color: rgba(167, 155, 21, 0.353); */
+      transform: translateZ(-60px) rotateY(180deg) rotateZ(180deg);
+      @include md {
+        transform: translateZ(-80px) rotateY(180deg) rotateZ(180deg);
+      }
+    }
+    .faceTop {
+      /* 
+        background-color: rgba(88, 14, 85, 0.353); */
+      transform: rotateX(90deg) translateY(-60px);
+      transform-origin: top center;
+      @include md {
+        transform: rotateX(90deg) translateY(-80px);
+      }
+    }
+    .faceRight {
+      width: 120px; /* 
+      background-color: rgba(153, 32, 32, 0.353); */
+      transform-origin: center right;
+      transform: rotateY(-270deg) translateX(60px) translateZ(240px);
+      @include md {
+        width: 160px;
+        transform: rotateY(-270deg) translateX(80px) translateZ(440px);
+      }
+    }
+    .faceLeft {
+      width: 120px; /* 
+      background-color: rgba(32, 46, 150, 0.353); */
+      transform: rotateY(270deg) translateX(-60px);
+      transform-origin: center left;
+      @include md {
+        width: 160px;
+        transform: rotateY(270deg) translateX(-80px);
+      }
+    }
+  }
+}
+.darkCube {
+  .cube {
+    .face {
+      background-color: $black-transparent;
+      border: 1px solid $white-transparent;
+      backdrop-filter: blur(4px);
+    }
+  }
+}
+.darkCube {
+  .cube {
+    .face {
+      background-color: $violet-transparent;
+      border: 1px solid $white-transparent;
+      backdrop-filter: blur(4px);
+    }
+  }
+}
+.lightCube {
+  .cube {
+    .face {
+      background-color: $dark-violet-transparent;
+      border: 1px solid $violet-transparent;
+      backdrop-filter: blur(4px);
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateX(0) rotateY(-15deg);
+  }
+  50% {
+    transform: rotateX(180deg) rotateY(15deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(-15deg);
+  }
+}

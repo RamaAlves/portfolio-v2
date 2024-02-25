@@ -8,7 +8,6 @@
   overflow: auto;
   overflow-x: hidden;
   margin-top: $height-nav;
-  @include scrollbar-style;
   @include lg {
     margin-top: 0;
   }
@@ -19,6 +18,8 @@
     overflow: hidden;
     height: 40px;
     flex-shrink: 0;
+    border-top: 0.4rem solid;
+    border-bottom: 0.4rem solid;
     .prhases {
       display: flex;
       width: max-content;
@@ -29,104 +30,257 @@
   }
   .containerInfo {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: 100vw;
+    height: 760px;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    position: relative;
     @include lg {
       /* 
       flex-direction: row; */
     }
-    .containerDescription {
-      font-size: $text-size-mobile;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-      gap: 1rem;
-      padding: 1rem;
-      @include lg {
-        font-size: $text-size;
+    .containerFaces {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 1s ease;
+      .faces {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 2rem 4rem;
+        margin: 0;
+        backdrop-filter: blur(4px);
+        @include lg {
+          padding: 4rem 10rem;
+        }
+        @include xl {
+          padding: 4rem 20%;
+        }
+      }
+      .faceOne {
+        transform: rotateY(0deg) translateZ(50vw);
+        .containerDescription {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 1rem;
+          padding: 1rem;
+          font-size: $text-size-mobile;
+          overflow: auto;
+          @include md {
+            @include scrollbar-style;
+          }
+          @include lg {
+            font-size: $text-size;
+          }
+          p {
+            text-wrap: pretty;
+          }
+        }
+        .buttonNextPage {
+          position: absolute;
+          right: 40px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: $title;
+          cursor: pointer;
+          transition: color 0.2s ease;
+          @include lg {
+            right: 80px;
+            font-size: $title-lg;
+          }
+          &:hover {
+            color: $violet;
+          }
+        }
+      }
+      .faceTwo {
+        transform: rotateY(90deg) translateZ(50vw);
+        .buttonPrevPage {
+          position: absolute;
+          left: 40px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: $title;
+          cursor: pointer;
+          transition: color 0.2s ease;
+          @include lg {
+            left: 80px;
+            font-size: $title-lg;
+          }
+          &:hover {
+            color: $violet;
+          }
+        }
       }
     }
-    .containerSectionHobbies {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      h3 {
-        @include sub-title;
+    .initialContainer {
+      animation: scrollPageLeft 1s ease-in-out forwards;
+      /* transform: rotateY(0); */
+      .faces {
+        animation: borderAppearL 1s linear;
       }
-      .containerHobbies {
-        scroll-behavior: smooth;
-        font-size: $text-size;
-        padding: 1.8rem 1rem;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        overflow: auto;
-        width: 100%;
-        gap: 1rem;
-        @include lg {
-          /*         
-          flex-wrap: wrap;
-          gap: 1rem;
-          justify-content: space-around;
-   */
+    }
+    .rotateContainer {
+      animation: scrollPageRight 1s ease-in-out forwards;
+      /* transform: rotateY(-90deg); */
+      .faces {
+        animation: borderAppearR 1s linear;
+      }
+    }
+  }
+}
+@keyframes borderAppearR {
+  0% {
+    border: none;
+  }
+  10% {
+    border: 2px solid $white;
+  }
+  90% {
+    border: 2px solid $white;
+  }
+  100% {
+    border: none;
+  }
+}
+@keyframes borderAppearL {
+  0% {
+    border: none;
+  }
+  10% {
+    border: 2px solid $white;
+  }
+  90% {
+    border: 2px solid $white;
+  }
+  100% {
+    border: none;
+  }
+}
+@keyframes scrollPageRight {
+  0% {
+    scale: 1;
+    transform: rotateY(0);
+    perspective: none;
+  }
+  20% {
+    transform: rotateY(0);
+  }
+  30% {
+    scale: 0.8;
+  }
+  75% {
+    scale: 0.8;
+    transform: rotateY(-90deg);
+  }
+  100% {
+    scale: 1;
+    transform: rotateY(-90deg);
+  }
+}
+@keyframes scrollPageLeft {
+  0% {
+    scale: 1;
+    transform: rotateY(-90deg);
+  }
+  20% {
+    transform: rotateY(-90deg);
+  }
+  30% {
+    scale: 0.8;
+  }
+  75% {
+    scale: 0.8;
+    transform: rotateY(0);
+  }
+  100% {
+    scale: 1;
+    transform: rotateY(0);
+  }
+}
+.darkMode {
+  @include scrollbar-style;
+  @include lg {
+    margin-top: 0;
+  }
+  .containerInfo {
+    .containerFaces {
+      .faceOne {
+        .containerDescription {
+          color: $white; /* 
+    filter: drop-shadow(0px 0px 4px $white); */
+        }
+        .buttonNextPage {
+          color: $white;
+          &:hover {
+            color: $violet;
+          }
+        }
+      }
+      .faceTwo {
+        .buttonPrevPage {
+          color: $white;
+          &:hover {
+            color: $violet;
+          }
         }
       }
     }
   }
-}
-.darkMode {
-  h2,
-  h3 {
-    color: $white;
-    filter: drop-shadow(0px 0px 4px $white);
-  }
-  .containerDescription {
-    color: $white;
-    filter: drop-shadow(0px 0px 4px $white);
-  }
   .containerPrhases {
-    background-color: $black-transparent;
-    border-top: 0.4rem solid;
-    border-bottom: 0.4rem solid;
+    background-color: $dark-violet;
     border-color: $white;
     animation: changeBorderDark 1.2s ease infinite alternate;
-    filter: drop-shadow(0px 0px 4px $light-violet);
+    filter: drop-shadow(0px 0px 4px $white-muted);
     .prhases {
-      color: $white;
-      filter: drop-shadow(0px 0px 1px $white);
+      color: $white; /* 
+      filter: drop-shadow(0px 0px 1px $white); */
     }
-  }
-  .containerHobbies {
-    color: $white;
   }
 }
-
 .lightMode {
-  h2,
-  h3 {
-    color: $black;
-    filter: drop-shadow(0px 0px 4px $light-violet);
+  @include scrollbar-style;
+  @include lg {
+    margin-top: 0;
   }
-  .containerDescription {
-    filter: drop-shadow(0px 0px 4px $light-violet);
-    color: $black;
-  }
-  .containerPrhases {
-    background-color: $white-transparent;
-    border-top: 0.4rem solid;
-    border-bottom: 0.4rem solid;
-    border-color: $light-violet;
-    animation: changeBorderLight 1.2s ease infinite alternate;
-    filter: drop-shadow(0px 0px 4px $violet);
-    .prhases {
-      color: $black;
-      filter: drop-shadow(0px 0px 1px $white);
+  .containerInfo {
+    .containerFaces {
+      .faceOne {
+        .containerDescription {
+          color: $black;
+          filter: drop-shadow(0px 0px 4px $white);
+        }
+        .buttonNextPage {
+          color: $light-violet;
+          &:hover {
+            color: $violet;
+          }
+        }
+      }
+      .faceTwo {
+        .buttonPrevPage {
+          color: $light-violet;
+          &:hover {
+            color: $violet;
+          }
+        }
+      }
     }
   }
-  .containerHobbies {
-    color: $black;
+  .containerPrhases {
+    background-color: $white;
+    border-color: $dark-violet;
+    animation: changeBorderLight 1.2s ease infinite alternate;
+    filter: drop-shadow(0px 0px 4px $white);
+    .prhases {
+      color: $black;
+      filter: drop-shadow(0px 0px 1px $black);
+    }
   }
 }
 

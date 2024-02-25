@@ -1,12 +1,9 @@
 import { ENGLISH } from '../../constants/Languages';
 import { useLang } from '../../hooks/useLang';
 import { useTheme } from '../../hooks/useTheme';
-import { personalDescription } from '../../info/personalDescription';
-import { ResumeScheme } from '../../interfaces/interfaces';
-/* import { BackgroundTech } from '../UI/Anim/BackgroundTech'; */
 import { ButtonCv } from '../UI/Buttons/ButtonCv/ButtonCv';
-/* import { ButtonNavigate } from '../UI/Buttons/ButtonNavigate/ButtonNavigate'; */
 import { ButtonsSocialMedia } from '../UI/Buttons/ButtonsSocialMedia/ButtonsSocialMedia';
+import { CubePresentation } from '../UI/Cube/CubePresentation/CubePresentation';
 import styles from './Hero.module.scss';
 
 export function Hero() {
@@ -20,16 +17,20 @@ export function Hero() {
       ].join(' ')}
     >
       <div className={styles.content}>
-        <div className={styles.containerResume}>
-          {personalDescription.resume.map((paragraph: ResumeScheme) => {
+        {/* <div className={styles.containerResume}>
+          {{personalDescription.resume.map((paragraph: ResumeScheme) => {
             return (
               <p key={paragraph.id} className={styles.resumeParagraph}>
                 {lang == ENGLISH ? paragraph.resumeEN : paragraph.resumeES}
               </p>
             );
           })}
-        </div>
+        </div>} */}
+        <p className={styles.intro}>
+          {lang == ENGLISH ? "Hello, I'm " : 'Hola, soy '}
+        </p>
         {/* <div className={styles.containerButtons}> */}
+        <CubePresentation />
         <ButtonCv />
         {/* <ButtonNavigate
             content={lang === ENGLISH ? 'Show more' : 'Ver mas'}
@@ -45,17 +46,17 @@ export function Hero() {
         <img
           className={[styles.image, styles.child1].join(' ')}
           src="/images/selfies/selfie.png"
-          alt=""
+          alt="selfie con movimiento"
         />
         <img
           className={[styles.image, styles.child2].join(' ')}
           src="/images/selfies/selfie2.png"
-          alt=""
+          alt="selfie con movimiento"
         />
         <img
           className={[styles.image, styles.child3].join(' ')}
           src="/images/selfies/selfie31.png"
-          alt=""
+          alt="selfie con movimiento"
         />
       </div>
     </section>

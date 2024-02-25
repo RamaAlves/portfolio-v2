@@ -44,14 +44,17 @@
   .column {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 2rem;
     min-height: 100px;
+    min-width: 360px;
     .titleColumn {
+      padding-top: 1rem;
       text-align: center;
       align-self: center;
+      font-size: $title;
       @include md {
-        font-size: $title;
+        font-size: $title-md;
       }
     }
     .socialMedia,
@@ -63,8 +66,9 @@
       align-items: center;
       gap: 3rem;
       @include md {
-        width: 50%;
+        /* width: 0%;
         justify-content: flex-start;
+         */
         gap: 2rem;
       }
       a {
@@ -113,22 +117,23 @@
   }
 }
 .lightMode {
-  background-color: $black;
+  background-color: $white-transparent;
 
   .titleColumn {
-    color: $white;
-    filter: drop-shadow(0px 0px 4px $light-violet);
+    color: $dark-violet;
+    /*     filter: drop-shadow(0px 0px 4px $light-violet);
+ */
   }
   .contacts,
   .socialMedia,
   .routes {
     a {
-      @include interact-anchor;
+      @include interact-anchor-dark;
     }
   }
   .copy {
-    color: $white;
-    filter: drop-shadow(0px 0px 4px $light-violet);
+    color: $black;
+    filter: drop-shadow(0px 0px 2px $light-violet);
   }
 }
 

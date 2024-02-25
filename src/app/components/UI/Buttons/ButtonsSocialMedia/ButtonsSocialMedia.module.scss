@@ -25,3 +25,26 @@
     }
   }
 }
+.darkMode {
+  a {
+    @include interact-anchor;
+    @include lg {
+      &:hover,
+      &:focus {
+        color: $light-grey;
+      }
+    }
+  }
+}
+.lightMode {
+  a {
+    @include interact-anchor-dark;
+    @include lg {
+      @include interact-anchor;
+      &:hover,
+      &:focus {
+        color: $light-grey;
+      }
+    }
+  }
+}

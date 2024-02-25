@@ -6,7 +6,7 @@ export function SliderInfinite() {
     <div className={styles.slider}>
       {projects.slice(0, 8).map(project => {
         return (
-          <div className={styles.slide}>
+          <div className={styles.slide} key={project.id}>
             <img
               className={styles.image}
               src={project.image}
@@ -17,7 +17,7 @@ export function SliderInfinite() {
       })}
       {projects.slice(0, 8).map(project => {
         return (
-          <div className={styles.slide}>
+          <div className={styles.slide} key={project.id + '_copy'}>
             <img
               className={styles.image}
               src={project.image}

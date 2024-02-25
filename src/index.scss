@@ -1,3 +1,4 @@
+@import './app/mixins.scss';
 :root {
   font-family: 'Genos', sans-serif;
   line-height: 1.5;
@@ -31,6 +32,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100dvh;
+  @include scrollbar-style-body;
 }
 
 h1 {

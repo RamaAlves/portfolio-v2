@@ -151,76 +151,7 @@
     transition: opacity 0s;
   }
 }
-.darkModeOverlay {
-  .logo {
-    filter: drop-shadow(0px 0px 4px $white);
-    &:hover {
-      filter: drop-shadow(0px 0px 6px $violet);
-    }
-  }
-  .cardOptions {
-    border: 1px solid $white;
-    @include card-dark;
-    .containerOptions {
-      .routes {
-        a {
-          li {
-            @include interact-anchor;
-            filter: none;
-            &:hover {
-              color: $white;
-            }
-          }
-        }
-      }
-    }
-    .contianerButton {
-      .button {
-        color: $white;
-        filter: drop-shadow(0px 0px 4px $white);
-        &:hover {
-          color: $light-violet;
-          filter: drop-shadow(0px 0px 4px $violet);
-        }
-      }
-    }
-  }
-}
-.lightModeOverlay {
-  .logo {
-    filter: drop-shadow(0px 0px 4px $light-violet);
-    &:hover {
-      filter: drop-shadow(0px 0px 6px $dark-violet);
-    }
-  }
-  .cardOptions {
-    border: 1px solid $white;
-    @include card-light;
-    .containerOptions {
-      .routes {
-        a {
-          li {
-            @include interact-anchor;
-            &:hover {
-              color: $light-grey;
-              filter: none;
-            }
-          }
-        }
-      }
-    }
-    .contianerButton {
-      .button {
-        color: $white;
-        filter: drop-shadow(0px 0px 4px $white);
-        &:hover {
-          color: $light-grey;
-          filter: drop-shadow(0px 0px 4px $light-violet);
-        }
-      }
-    }
-  }
-}
+
 .navbarMobile {
   position: fixed;
   display: flex;
@@ -305,6 +236,7 @@
   }
   .button {
     color: $white;
+    background-color: transparent;
   }
   .routes {
     a {
@@ -315,9 +247,13 @@
   }
 }
 .lightMode {
-  background-color: $black;
-  border-bottom: 1px solid $violet;
-  filter: drop-shadow(0px 0px 10px $light-violet);
+  background: linear-gradient($violet-transparent 86%, transparent 100%);
+  backdrop-filter: blur(4px);
+  /* border-bottom: 1px solid $white; */
+  /* filter: drop-shadow(0px 0px 10px $white) */
+  @include lg {
+    background: linear-gradient($violet-transparent, transparent 100%);
+  }
   .info {
     &:hover,
     &:focus {
@@ -327,16 +263,90 @@
       filter: drop-shadow(0px 0px 4px $light-violet);
     }
     .name {
-      color: $white;
+      color: $black;
     }
   }
   .button {
     color: $white;
+    background-color: transparent;
   }
   .routes {
     a {
       li {
         @include interact-anchor;
+        @include lg {
+          @include interact-anchor-dark;
+        }
+      }
+    }
+  }
+}
+.darkModeOverlay {
+  .logo {
+    filter: drop-shadow(0px 0px 4px $white);
+    &:hover {
+      filter: drop-shadow(0px 0px 6px $violet);
+    }
+  }
+  .cardOptions {
+    border: 1px solid $white;
+    @include card-dark;
+    .containerOptions {
+      .routes {
+        a {
+          li {
+            @include interact-anchor;
+            filter: none;
+            &:hover {
+              color: $light-grey;
+            }
+          }
+        }
+      }
+    }
+    .contianerButton {
+      .button {
+        color: $white;
+        filter: drop-shadow(0px 0px 4px $white);
+        &:hover {
+          color: $light-violet;
+          filter: drop-shadow(0px 0px 4px $violet);
+        }
+      }
+    }
+  }
+}
+.lightModeOverlay {
+  .logo {
+    filter: drop-shadow(0px 0px 4px $light-violet);
+    &:hover {
+      filter: drop-shadow(0px 0px 6px $dark-violet);
+    }
+  }
+  .cardOptions {
+    border: 1px solid $white;
+    @include card-dark;
+    .containerOptions {
+      .routes {
+        a {
+          li {
+            @include interact-anchor;
+            &:hover {
+              color: $dark-violet;
+              filter: none;
+            }
+          }
+        }
+      }
+    }
+    .contianerButton {
+      .button {
+        color: $white;
+        filter: drop-shadow(0px 0px 4px $white);
+        &:hover {
+          color: $dark-violet;
+          filter: drop-shadow(0px 0px 4px $light-violet);
+        }
       }
     }
   }

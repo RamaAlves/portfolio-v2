@@ -5,11 +5,18 @@
   transition:
     color 0.3s ease,
     filter 0.3s ease;
+  @include lg {
+    align-self: flex-start;
+    padding-left: 10%;
+  }
+  @include xl {
+    align-self: center;
+  }
 }
 .darkMode {
-  color: $violet;
+  color: $light-violet;
   &:hover {
-    color: $light-violet;
+    color: $white;
     filter: drop-shadow(0px 0px 10px $light-violet);
   }
 }
