@@ -161,18 +161,10 @@
 }
 
 @mixin scrollbar-style {
-  &::-webkit-scrollbar {
-    width: 8px;
-    background-color: $dark-violet;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: $light-violet;
-  }
+  scrollbar-width: thin;
+  scrollbar-color: $light-violet $dark-violet;
 }
 @mixin scrollbar-style-body {
   @include scrollbar-style;
-  &::-webkit-scrollbar {
-    border-left: 1px solid $light-violet;
-    width: 12px;
-  }
+  scrollbar-width: auto;
 }

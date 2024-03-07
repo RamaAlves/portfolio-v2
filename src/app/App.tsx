@@ -35,14 +35,6 @@ function App() {
   return (
     <ThemeProvider>
       <LangProvider>
-        {/* <BrowserRouter>
-          <Routes>
-            <Route element={<Layout />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/projects" element={<Projects />} />
-            </Route>
-          </Routes>
-        </BrowserRouter> */}
         <RouterProvider router={router} />
       </LangProvider>
     </ThemeProvider>

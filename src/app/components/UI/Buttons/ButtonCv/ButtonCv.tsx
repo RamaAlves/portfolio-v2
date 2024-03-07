@@ -17,7 +17,11 @@ export function ButtonCv() {
   }
   return (
     <a
-      href="/cv/cv.pdf"
+      href={
+        lang === ENGLISH
+          ? '/cv/AlvesRamiroCV-EN.pdf'
+          : '/cv/AlvesRamiroCV-ES.pdf'
+      }
       target="_blank"
       onMouseEnter={handleActivateAnimation}
       onMouseLeave={handleDeactivateAnimation}
