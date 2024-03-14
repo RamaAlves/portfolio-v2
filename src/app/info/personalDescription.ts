@@ -127,9 +127,9 @@ export const personalDescription = {
     },
     {
       hobbieEN:
-        'Another hobby I enjoy is playing video games, there are many genres that I like; however, I am currently playing "sekiro". Also I play with my friends "Age of Empires II", "League of Legends" and some other games.',
+        'Another hobby I enjoy is playing video games. There are many genres that I like and, I am currently playing "sekiro". Also, I play with my friends "Age of Empires II", "League of Legends" and some other games.',
       hobbieES:
-        'Otro hobbie del que disfruto es jugar video juegos, hay muchos generos que me gustan aunque actualmente estoy jugando al "sekiro" y junto a un grupo de amigos solemos jugar al "Age of empires II", al "League of Legends" o algun otro jugo mas casual.',
+        'Otro hobbie del que disfruto es jugar video juegos, hay muchos generos que me gustan y actualmente estoy jugando al "sekiro" y junto a un grupo de amigos solemos jugar al "Age of empires II", al "League of Legends" o algun otro jugo mas casual.',
       image: ['/images/hobbies/games.jpeg'],
       id: 'hobbie-5',
     },
